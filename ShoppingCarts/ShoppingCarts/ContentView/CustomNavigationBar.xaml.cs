@@ -55,7 +55,7 @@ namespace ShoppingCarts.ContentView
 
         private void Tapcart_OnTapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new CartDetailPage());
+            Navigation.PushAsync(new CartDetailPage());
         }
     }
 }
