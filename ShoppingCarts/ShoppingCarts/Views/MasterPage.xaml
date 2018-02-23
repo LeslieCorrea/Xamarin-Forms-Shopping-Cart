@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCarts.Views.MasterPage"
+             xmlns:local="using:ShoppingCarts.Model"
+             xmlns:localpages="clr-namespace:ShoppingCarts.Views"
+			 Padding="0,40,0,0"
+			 Icon="hamburger.png"
+			 Title="Shopping carts">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="Cart" WidthRequest="50" HeightRequest="50" Margin="5,0,0,0" HorizontalOptions="Start"/>
+            <ListView x:Name="listView">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type local:MasterPageItem}">
+                        <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" />
+                        <local:MasterPageItem Title="Second Page" TargetType="{x:Type localpages:SecondPage}" />
+                        <local:MasterPageItem Title="Third Page" TargetType="{x:Type localpages:ThirdPage}" />
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" Text="{Binding Title}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
