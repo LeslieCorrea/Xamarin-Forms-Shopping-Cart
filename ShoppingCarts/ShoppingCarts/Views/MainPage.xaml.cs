@@ -18,6 +18,8 @@ namespace ShoppingCarts.Views
             {
                 MasterBehavior = MasterBehavior.Popover;
             }
+
+            MessagingCenter.Subscribe<ContentView.CustomNavigationBar>(this, "presentMenu", (sender) => { IsPresented = !IsPresented; });
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -131,4 +131,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\Cart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CartIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slideout.png" />
+  </ItemGroup>
 </Project>

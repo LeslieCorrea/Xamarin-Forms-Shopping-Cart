@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="ShoppingCarts.ContentView.CustomNavigationBar">
+    <ContentView.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#F44336">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="44"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ContentView Grid.Row="0" Grid.Column="0">
+                <Image Source="slideout"
+                               WidthRequest="30"
+                               HeightRequest="30"
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+            <!--<Label x:Name="lblTitle" TextColor="White"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.Row="0" Grid.Column="1" />-->
+            <ContentView Grid.Row="0" Grid.Column="2" Margin="0,5,5,0">
+
+                <RelativeLayout>
+                    <Image Source="CartIcon" HeightRequest="30" WidthRequest="30" x:Name="yellowBoxView"
+                                   RelativeLayout.YConstraint="{ConstraintExpression
+                                   Type=RelativeToParent,
+                                   Property=Height,
+                                   Factor=0.018,Constant=0}"
+
+                                   RelativeLayout.XConstraint="{ConstraintExpression
+                                   Type=RelativeToParent,
+                                   Property=Width,
+                                   Factor=0.85,Constant=0}" />
+                    <Image Source="http://www.iconsdb.com/icons/preview/red/circle-xxl.png Jump " HeightRequest="15" WidthRequest="15" x:Name="redBoxView"
+                                   RelativeLayout.YConstraint="{ConstraintExpression
+                                   Type=RelativeToView,
+                                   Property=Y,
+                                   ElementName=yellowBoxView,
+                                   Factor=1,Constant=-5}"
+
+                                   RelativeLayout.XConstraint="{ConstraintExpression
+                                   Type=RelativeToView,
+                                   Property=X,
+                                   ElementName=yellowBoxView,
+                                   Factor=1,Constant=25}" />
+                    <Label HorizontalTextAlignment="Center"  FontSize="9" TextColor="White" HeightRequest="10" WidthRequest="20" x:Name="labelText"
+                                   RelativeLayout.YConstraint="{ConstraintExpression
+                                   Type=RelativeToView,
+                                   Property=Y,
+                                   ElementName=yellowBoxView,
+                                   Factor=1,Constant=-5}"
+
+                                   RelativeLayout.XConstraint="{ConstraintExpression
+                                   Type=RelativeToView,
+                                   Property=X,
+                                   ElementName=yellowBoxView,
+                                   Factor=1,Constant=25}" />
+                </RelativeLayout>
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapcart" Tapped="Tapcart_OnTapped" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <BoxView BackgroundColor="Red" Grid.ColumnSpan="3"
+                             Grid.Row="1" Grid.Column="0" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

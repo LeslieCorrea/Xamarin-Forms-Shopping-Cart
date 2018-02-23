@@ -2,12 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCarts.Views.CartPage"
+             xmlns:customContentView="clr-namespace:ShoppingCarts.ContentView;assembly=ShoppingCarts"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="false"
              Title="Cart Page">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+        <StackLayout Spacing="0">
+            <StackLayout>
+                <customContentView:CustomNavigationBar x:Name="NavigationBarView" Title="{Binding Title}" />
+                <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
+                <Button Text="Add to Cart" x:Name="BtnIncrement" Clicked="BtnIncrement_OnClicked"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
