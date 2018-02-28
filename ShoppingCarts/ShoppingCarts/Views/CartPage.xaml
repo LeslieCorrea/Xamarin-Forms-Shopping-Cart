@@ -10,10 +10,29 @@
         <StackLayout Spacing="0">
             <StackLayout>
                 <customContentView:CustomNavigationBar x:Name="NavigationBarView" Title="{Binding Title}" />
-                <Label Text="Welcome to Xamarin.Forms!"
+                <!--<Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
-                <Button Text="Add to Cart" x:Name="BtnIncrement" Clicked="BtnIncrement_OnClicked"></Button>
+                <Button Text="Add to Cart" x:Name="BtnIncrement" Clicked="BtnIncrement_OnClicked"></Button>-->
+                <ListView x:Name="ItemsListView"
+                          HasUnevenRows="True"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="Aqua"
+                          SeparatorVisibility="Default"
+                          ItemsSource="{Binding ShoppingItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
+                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                                    <Button Text="Add to cart" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
