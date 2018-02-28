@@ -1,4 +1,5 @@
-﻿using ShoppingCarts.ViewModels;
+﻿using ShoppingCarts.Model;
+using ShoppingCarts.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,18 @@ namespace ShoppingCarts.Views
         {
             base.OnAppearing();
             _ViewModel.GetData.Execute(null);
+        }
+
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var shoppingItem = ((ListView)sender).SelectedItem as Item;
+
+            if (shoppingItem == null)
+                return;
+
+            await Navigation.PushAsync(new ItemDetailPage(shoppingItem));
+
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }
