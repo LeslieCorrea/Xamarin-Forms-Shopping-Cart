@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCarts.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,12 @@ namespace ShoppingCarts.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
+        public CartPageViewModel _ViewModel;
+
         public CartPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            BindingContext = _ViewModel = new CartPageViewModel();
         }
 
         public double clicks = 0;

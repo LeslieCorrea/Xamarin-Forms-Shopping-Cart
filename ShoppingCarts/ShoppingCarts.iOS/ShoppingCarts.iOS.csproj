@@ -137,4 +137,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\slideout.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Items.png" />
+  </ItemGroup>
 </Project>
