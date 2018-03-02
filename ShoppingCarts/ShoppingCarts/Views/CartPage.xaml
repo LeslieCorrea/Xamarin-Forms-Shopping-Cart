@@ -28,7 +28,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
                                     <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                                    <Button Text="Add to cart" HorizontalOptions="EndAndExpand" />
+                                    <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand" Command="OnItemButtonClickedCommand" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

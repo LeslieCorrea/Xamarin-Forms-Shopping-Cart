@@ -1,4 +1,5 @@
-﻿using ShoppingCarts.Model;
+﻿using ShoppingCarts.Helpers;
+using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
 
 using Xamarin.Forms;
@@ -14,7 +15,10 @@ namespace ShoppingCarts.Views
         public CartPage()
         {
             InitializeComponent();
+
             BindingContext = _ViewModel = new CartPageViewModel();
+
+            NavigationBarView.FirstNameLabel.Text = GenericMethods.CartCount().ToString();
         }
 
         public double clicks = 0;

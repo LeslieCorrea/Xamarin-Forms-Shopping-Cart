@@ -1,4 +1,5 @@
-﻿using ShoppingCarts.Model;
+﻿using ShoppingCarts.Helpers;
+using ShoppingCarts.Model;
 using ShoppingCarts.Services.ServiceInterface;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -19,27 +20,32 @@ namespace ShoppingCarts.Services.ServiceImplementation
             Items.Add(new Item
             {
                 Image = "Items",
-                Name = "Item1"
+                Name = "Item1",
+                Status = Settings.ItemStatus1
             });
             Items.Add(new Item
             {
                 Image = "Items",
-                Name = "Item1"
+                Name = "Item2",
+                Status = Settings.ItemStatus2
             });
             Items.Add(new Item
             {
                 Image = "Items",
-                Name = "Item2"
+                Name = "Item3",
+                Status = Settings.ItemStatus3
             });
             Items.Add(new Item
             {
                 Image = "Items",
-                Name = "Item3"
+                Name = "Item4",
+                Status = Settings.ItemStatus4
             });
             Items.Add(new Item
             {
                 Image = "Items",
-                Name = "Item4"
+                Name = "Item5",
+                Status = Settings.ItemStatus5
             });
         }
 
