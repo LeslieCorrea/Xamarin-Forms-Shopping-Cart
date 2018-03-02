@@ -1,12 +1,12 @@
 ﻿using ShoppingCarts.Model;
-using ShoppingCarts.Services.ServiceImplementation;
+using ShoppingCarts.Services.ServiceInterface;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(ShoppingCarts.Services.ServiceInterface.ItemService))]
+[assembly: Dependency(typeof(ShoppingCarts.Services.ServiceImplementation.ItemService))]
 
-namespace ShoppingCarts.Services.ServiceInterface
+namespace ShoppingCarts.Services.ServiceImplementation
 {
     public class ItemService : IItemService
     {

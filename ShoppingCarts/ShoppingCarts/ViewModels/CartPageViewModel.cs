@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MvvmHelpers;
 using ShoppingCarts.Model;
-using ShoppingCarts.Services.ServiceImplementation;
+using ShoppingCarts.Services.ServiceInterface;
 using Xamarin.Forms;
 
 namespace ShoppingCarts.ViewModels

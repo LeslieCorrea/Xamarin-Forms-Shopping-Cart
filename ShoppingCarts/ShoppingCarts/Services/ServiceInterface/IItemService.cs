@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShoppingCarts.Services.ServiceImplementation
+namespace ShoppingCarts.Services.ServiceInterface
 {
     public interface IItemService
     {
