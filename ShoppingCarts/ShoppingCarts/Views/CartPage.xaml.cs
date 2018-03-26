@@ -18,7 +18,9 @@ namespace ShoppingCarts.Views
 
             BindingContext = _ViewModel = new CartPageViewModel();
 
-            NavigationBarView.FirstNameLabel.Text = GenericMethods.CartCount().ToString();
+            //NavigationBarView.FirstNameLabel.Text = GenericMethods.CartCount().ToString();
+
+            NavigationBarView.FirstNameLabel.SetBinding(Label.TextProperty, "CartCounter");
         }
 
         public double clicks = 0;
@@ -33,6 +35,7 @@ namespace ShoppingCarts.Views
         {
             base.OnAppearing();
             _ViewModel.GetData.Execute(null);
+            //NavigationBarView.FirstNameLabel.Text = GenericMethods.CartCount().ToString();
         }
 
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

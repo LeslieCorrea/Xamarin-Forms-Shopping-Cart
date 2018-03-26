@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ShoppingCarts.ViewModels;
+using Xamarin.Forms;
 
 namespace ShoppingCarts
 {

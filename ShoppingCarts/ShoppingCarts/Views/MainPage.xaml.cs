@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCarts.ViewModels;
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,6 +21,11 @@ namespace ShoppingCarts.Views
             }
 
             MessagingCenter.Subscribe<ContentView.CustomNavigationBar>(this, "presentMenu", (sender) => { IsPresented = !IsPresented; });
+
+            MessagingCenter.Subscribe<CartPageViewModel>(this, "RefreshPage", (sender) =>
+            {
+                Detail = new NavigationPage(new CartPage());
+            });
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

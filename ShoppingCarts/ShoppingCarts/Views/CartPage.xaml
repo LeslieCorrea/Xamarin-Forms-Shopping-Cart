@@ -5,6 +5,7 @@
              xmlns:customContentView="clr-namespace:ShoppingCarts.ContentView;assembly=ShoppingCarts"
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="false"
+             x:Name="CartPage"
              Title="Cart Page">
     <ContentPage.Content>
         <StackLayout Spacing="0">
@@ -28,7 +29,8 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
                                     <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                                    <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand" Command="OnItemButtonClickedCommand" />
+                                    <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
+                                            Command="{Binding Source={x:Reference CartPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

@@ -21,30 +21,35 @@ namespace ShoppingCarts.Services.ServiceImplementation
             {
                 Image = "Items",
                 Name = "Item1",
+                Index = 1,
                 Status = Settings.ItemStatus1
             });
             Items.Add(new Item
             {
                 Image = "Items",
                 Name = "Item2",
+                Index = 2,
                 Status = Settings.ItemStatus2
             });
             Items.Add(new Item
             {
                 Image = "Items",
                 Name = "Item3",
+                Index = 3,
                 Status = Settings.ItemStatus3
             });
             Items.Add(new Item
             {
                 Image = "Items",
                 Name = "Item4",
+                Index = 4,
                 Status = Settings.ItemStatus4
             });
             Items.Add(new Item
             {
                 Image = "Items",
                 Name = "Item5",
+                Index = 5,
                 Status = Settings.ItemStatus5
             });
         }
