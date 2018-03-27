@@ -9,12 +9,9 @@
              Title="Cart Page">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <StackLayout>
+            <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <StackLayout IsVisible="{Binding IsNotBusy}">
                 <customContentView:CustomNavigationBar x:Name="NavigationBarView" Title="{Binding Title}" />
-                <!--<Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-                <Button Text="Add to Cart" x:Name="BtnIncrement" Clicked="BtnIncrement_OnClicked"></Button>-->
                 <ListView x:Name="ItemsListView"
                           HasUnevenRows="True"
                           VerticalOptions="FillAndExpand"

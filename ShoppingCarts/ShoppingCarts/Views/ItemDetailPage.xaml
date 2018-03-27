@@ -5,9 +5,6 @@
              Title="Item Details">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="20,20,20,20">
-            <!--<Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />-->
             <Image VerticalOptions="Start" HorizontalOptions="Center"
                    Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
             <Label Text="{Binding ItemName}" HorizontalOptions="Center" Margin="0,30,0,0" />

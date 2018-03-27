@@ -11,9 +11,6 @@ namespace ShoppingCarts.ViewModels
 {
     public class CartPageViewModel : BaseViewModel
     {
-        //public ObservableRangeCollection<Item> shoppingItems;
-        //public ObservableRangeCollection<Item> ShoppingItems { get { return shoppingItems; } set { SetProperty(ref shoppingItems, value); } }
-
         public ObservableRangeCollection<Item> ShoppingItems { get; } = new ObservableRangeCollection<Item>();
 
         public string cartCounter;
@@ -40,69 +37,57 @@ namespace ShoppingCarts.ViewModels
 
         public CartPageViewModel()
         {
-            // ShoppingItems = new ObservableRangeCollection<Item>();
             GetData = new Command(async () => await GetDataCommand());
             _Service = DependencyService.Get<IItemService>();
-            OnItemButtonClickedCommand = new Command(async (e) => await ExecuteButtonClick(e));
+            OnItemButtonClickedCommand = new Command((e) => ExecuteButtonClick(e));
         }
 
-        private async Task ExecuteButtonClick(Object e)
+        private void ExecuteButtonClick(Object e)
         {
-            var selectedItem = (Item)e;
+            if (IsBusy)
+                return;
 
-            List<Item> ItemsList = new List<Item>(ShoppingItems);
+            try
+            {
+                IsBusy = true;
 
-            var index = selectedItem.Index;
-            if (index == 1)
-                Settings.ItemStatus1 = !Settings.ItemStatus1;
-            if (index == 2)
-                Settings.ItemStatus2 = !Settings.ItemStatus2;
-            if (index == 3)
-                Settings.ItemStatus3 = !Settings.ItemStatus3;
-            if (index == 4)
-                Settings.ItemStatus4 = !Settings.ItemStatus4;
-            if (index == 5)
-                Settings.ItemStatus5 = !Settings.ItemStatus5;
+                var selectedItem = (Item)e;
 
-            //  ShoppingItems.Clear();
+                List<Item> ItemsList = new List<Item>(ShoppingItems);
 
-            //selectedItem.Status = !selectedItem.Status;
+                var index = selectedItem.Index;
+                if (index == 1)
+                    Settings.ItemStatus1 = !Settings.ItemStatus1;
+                if (index == 2)
+                    Settings.ItemStatus2 = !Settings.ItemStatus2;
+                if (index == 3)
+                    Settings.ItemStatus3 = !Settings.ItemStatus3;
+                if (index == 4)
+                    Settings.ItemStatus4 = !Settings.ItemStatus4;
+                if (index == 5)
+                    Settings.ItemStatus5 = !Settings.ItemStatus5;
 
-            //if (!selectedItem.Status)
-            //    selectedItem.ButtonText = "Add to cart";
-            //else
-            //    selectedItem.ButtonText = "Remove from cart";
+                CartCounter = GenericMethods.CartCount().ToString();
 
-            //  await GetDataCommand();
+                ShoppingItems.Clear();
 
-            CartCounter = GenericMethods.CartCount().ToString();
+                if (selectedItem.Status)
+                    ItemsList[index - 1].ButtonText = "Add to cart";
+                else
+                    ItemsList[index - 1].ButtonText = "Remove from cart";
 
-            // var list = new List<int>(obsCollection);
+                selectedItem.Status = !selectedItem.Status;
 
-            ShoppingItems.Clear();
-
-            if (selectedItem.Status)
-                ItemsList[index - 1].ButtonText = "Add to cart";
-            else
-                ItemsList[index - 1].ButtonText = "Remove from cart";
-
-            selectedItem.Status = !selectedItem.Status;
-
-            ShoppingItems.ReplaceRange(ItemsList);
-
-            //for (int i = 0; i < ItemsList.Count; i++)
-            //{
-            //    if (ItemsList[i].Status)
-            //        ItemsList[i].ButtonText = "Remove from cart";
-            //    else
-            //        ItemsList[i].ButtonText = "Add to cart";
-            //}
-
-            //ShoppingItems.ReplaceRange(ItemsList);
-
-            // MessagingCenter.Send(this, "RefreshPage");
-
-            var a = 1;
+                ShoppingItems.ReplaceRange(ItemsList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception is " + ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async Task GetDataCommand()
@@ -125,8 +110,6 @@ namespace ShoppingCarts.ViewModels
                 ShoppingItems.ReplaceRange(ItemsList);
 
                 CartCounter = GenericMethods.CartCount().ToString();
-
-                var a = 1;
             }
             catch (Exception e)
             {

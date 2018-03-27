@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using MvvmHelpers;
+﻿using MvvmHelpers;
 using ShoppingCarts.Helpers;
 using ShoppingCarts.Model;
+using System;
 using Xamarin.Forms;
 
 namespace ShoppingCarts.ViewModels
@@ -46,30 +45,46 @@ namespace ShoppingCarts.ViewModels
 
         private void GetDataCommand(Item ShoppingItem)
         {
-            if (!ShoppingItem.Status)
+            if (IsBusy)
+                return;
+
+            try
             {
-                ButtonName = "Remove from cart";
+                IsBusy = true;
+
+                if (!ShoppingItem.Status)
+                {
+                    ButtonName = "Remove from cart";
+                }
+                else
+                {
+                    ButtonName = "Add to cart";
+                }
+
+                var index = ShoppingItem.Index;
+                if (index == 1)
+                    Settings.ItemStatus1 = !Settings.ItemStatus1;
+                if (index == 2)
+                    Settings.ItemStatus2 = !Settings.ItemStatus2;
+                if (index == 3)
+                    Settings.ItemStatus3 = !Settings.ItemStatus3;
+                if (index == 4)
+                    Settings.ItemStatus4 = !Settings.ItemStatus4;
+                if (index == 5)
+                    Settings.ItemStatus5 = !Settings.ItemStatus5;
+
+                ShoppingItem.Status = !ShoppingItem.Status;
+
+                GenericMethods.CartCount();
             }
-            else
+            catch (Exception ex)
             {
-                ButtonName = "Add to cart";
+                Console.WriteLine("Exception is " + ex);
             }
-
-            var index = ShoppingItem.Index;
-            if (index == 1)
-                Settings.ItemStatus1 = !Settings.ItemStatus1;
-            if (index == 2)
-                Settings.ItemStatus2 = !Settings.ItemStatus2;
-            if (index == 3)
-                Settings.ItemStatus3 = !Settings.ItemStatus3;
-            if (index == 4)
-                Settings.ItemStatus4 = !Settings.ItemStatus4;
-            if (index == 5)
-                Settings.ItemStatus5 = !Settings.ItemStatus5;
-
-            ShoppingItem.Status = !ShoppingItem.Status;
-
-            GenericMethods.CartCount();
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }
