@@ -50,6 +50,8 @@ namespace ShoppingCarts.ViewModels
         {
             var selectedItem = (Item)e;
 
+            List<Item> ItemsList = new List<Item>(ShoppingItems);
+
             var index = selectedItem.Index;
             if (index == 1)
                 Settings.ItemStatus1 = !Settings.ItemStatus1;
@@ -76,7 +78,6 @@ namespace ShoppingCarts.ViewModels
             CartCounter = GenericMethods.CartCount().ToString();
 
             // var list = new List<int>(obsCollection);
-            List<Item> ItemsList = new List<Item>(ShoppingItems);
 
             ShoppingItems.Clear();
 
@@ -84,6 +85,8 @@ namespace ShoppingCarts.ViewModels
                 ItemsList[index - 1].ButtonText = "Add to cart";
             else
                 ItemsList[index - 1].ButtonText = "Remove from cart";
+
+            selectedItem.Status = !selectedItem.Status;
 
             ShoppingItems.ReplaceRange(ItemsList);
 
