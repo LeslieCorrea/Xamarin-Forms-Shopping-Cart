@@ -2,12 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCarts.Views.CartDetailPage"
+             x:Name="CartDetailPage"
              Title="Cart Item Detail">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="0">
+            <StackLayout>
+                <ListView x:Name="ItemsListView"
+                          HasUnevenRows="True"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand"
+                          ItemSelected="OnItemSelected"
+                          BackgroundColor="Aqua"
+                          SeparatorVisibility="Default"
+                          ItemsSource="{Binding ShoppingItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
+                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                                    <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
+                                            Command="{Binding Source={x:Reference CartDetailPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

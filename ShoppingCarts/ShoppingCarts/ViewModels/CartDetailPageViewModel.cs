@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmHelpers;
+﻿using MvvmHelpers;
 using ShoppingCarts.Helpers;
 using ShoppingCarts.Model;
 using ShoppingCarts.Services.ServiceInterface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ShoppingCarts.ViewModels
 {
-    public class CartPageViewModel : BaseViewModel
+    public class CartDetailPageViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Item> ShoppingItems { get; } = new ObservableRangeCollection<Item>();
-
-        public string cartCounter;
-
-        public string CartCounter
-        {
-            get { return cartCounter; }
-            set { SetProperty(ref cartCounter, value); }
-        }
 
         public string buttonText;
 
@@ -35,7 +28,7 @@ namespace ShoppingCarts.ViewModels
 
         public readonly IItemService _Service;
 
-        public CartPageViewModel()
+        public CartDetailPageViewModel()
         {
             GetData = new Command(async () => await GetDataCommand());
             _Service = DependencyService.Get<IItemService>();
@@ -67,18 +60,15 @@ namespace ShoppingCarts.ViewModels
                 if (index == 5)
                     Settings.ItemStatus5 = !Settings.ItemStatus5;
 
-                CartCounter = GenericMethods.CartCount().ToString();
-
                 ShoppingItems.Clear();
-
-                if (selectedItem.Status)
-                    ItemsList[index - 1].ButtonText = "Add to cart";
-                else
-                    ItemsList[index - 1].ButtonText = "Remove from cart";
 
                 selectedItem.Status = !selectedItem.Status;
 
-                ShoppingItems.ReplaceRange(ItemsList);
+                List<Item> UpdatedList = new List<Item>();
+
+                UpdatedList = ItemsList.Where(item => item.Status).ToList<Item>();
+
+                ShoppingItems.ReplaceRange(UpdatedList);
             }
             catch (Exception ex)
             {
@@ -107,11 +97,11 @@ namespace ShoppingCarts.ViewModels
                         ItemsList[i].ButtonText = "Add to cart";
                 }
 
-                ShoppingItems.Clear();
+                List<Item> UpdatedList = new List<Item>();
 
-                ShoppingItems.ReplaceRange(ItemsList);
+                UpdatedList = ItemsList.Where(item => item.Status).ToList<Item>();
 
-                CartCounter = GenericMethods.CartCount().ToString();
+                ShoppingItems.ReplaceRange(UpdatedList);
             }
             catch (Exception e)
             {
