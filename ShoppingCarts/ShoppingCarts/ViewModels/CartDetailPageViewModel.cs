@@ -26,6 +26,8 @@ namespace ShoppingCarts.ViewModels
 
         public Command OnItemButtonClickedCommand { get; set; }
 
+        public Command RemoveAllButton { get; set; }
+
         public readonly IItemService _Service;
 
         public CartDetailPageViewModel()
@@ -33,6 +35,33 @@ namespace ShoppingCarts.ViewModels
             GetData = new Command(async () => await GetDataCommand());
             _Service = DependencyService.Get<IItemService>();
             OnItemButtonClickedCommand = new Command((e) => ExecuteButtonClick(e));
+            RemoveAllButton = new Command(() => RemoveAllItems());
+        }
+
+        private void RemoveAllItems()
+        {
+            if (IsBusy)
+                return;
+            try
+            {
+                IsBusy = true;
+
+                Settings.ItemStatus1 = false;
+                Settings.ItemStatus2 = false;
+                Settings.ItemStatus3 = false;
+                Settings.ItemStatus4 = false;
+                Settings.ItemStatus5 = false;
+
+                ShoppingItems.Clear();
+            }
+            catch (Exception e)
+            {
+                Console.Write("Exception is " + e);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private void ExecuteButtonClick(Object e)

@@ -7,6 +7,7 @@
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <StackLayout>
+                <Button Text="Remove all items form cart" Command="{Binding RemoveAllButton}" />
                 <ListView x:Name="ItemsListView"
                           HasUnevenRows="True"
                           VerticalOptions="FillAndExpand"

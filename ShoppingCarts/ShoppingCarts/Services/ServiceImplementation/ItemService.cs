@@ -16,6 +16,11 @@ namespace ShoppingCarts.Services.ServiceImplementation
         public ItemService()
         {
             Items = new List<Item>();
+        }
+
+        public async Task<List<Item>> GetItems()
+        {
+            Items.Clear();
 
             Items.Add(new Item
             {
@@ -52,10 +57,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
                 Index = 5,
                 Status = Settings.ItemStatus5
             });
-        }
 
-        public async Task<List<Item>> GetItems()
-        {
             return await Task.FromResult(Items);
         }
     }
