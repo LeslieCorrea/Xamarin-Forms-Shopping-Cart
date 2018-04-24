@@ -6,7 +6,10 @@
              Title="Cart Item Detail">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <StackLayout>
+            <StackLayout IsVisible="{Binding NoItemsInCart}" Padding="5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label Text="There are no items in the cart" FontSize="Medium" VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout IsVisible="{Binding ItemsInCart}">
                 <Button Text="Remove all items form cart" Command="{Binding RemoveAllButton}" />
                 <ListView x:Name="ItemsListView"
                           HasUnevenRows="True"

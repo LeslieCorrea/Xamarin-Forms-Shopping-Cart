@@ -22,6 +22,22 @@ namespace ShoppingCarts.ViewModels
             set { SetProperty(ref buttonText, value); }
         }
 
+        public bool itemsInCart;
+
+        public bool ItemsInCart
+        {
+            get { return itemsInCart; }
+            set { SetProperty(ref itemsInCart, value); }
+        }
+
+        public bool noItemsInCart;
+
+        public bool NoItemsInCart
+        {
+            get { return noItemsInCart; }
+            set { SetProperty(ref noItemsInCart, value); }
+        }
+
         public Command GetData { get; set; }
 
         public Command OnItemButtonClickedCommand { get; set; }
@@ -53,6 +69,9 @@ namespace ShoppingCarts.ViewModels
                 Settings.ItemStatus5 = false;
 
                 ShoppingItems.Clear();
+
+                ItemsInCart = false;
+                NoItemsInCart = true;
             }
             catch (Exception e)
             {
@@ -97,6 +116,8 @@ namespace ShoppingCarts.ViewModels
 
                 UpdatedList = ItemsList.Where(item => item.Status).ToList<Item>();
 
+                SetItems(UpdatedList);
+
                 ShoppingItems.ReplaceRange(UpdatedList);
             }
             catch (Exception ex)
@@ -130,6 +151,8 @@ namespace ShoppingCarts.ViewModels
 
                 UpdatedList = ItemsList.Where(item => item.Status).ToList<Item>();
 
+                SetItems(UpdatedList);
+
                 ShoppingItems.ReplaceRange(UpdatedList);
             }
             catch (Exception e)
@@ -139,6 +162,20 @@ namespace ShoppingCarts.ViewModels
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        public void SetItems(List<Item> ItemList)
+        {
+            if (ItemList.Count > 0)
+            {
+                ItemsInCart = true;
+                NoItemsInCart = false;
+            }
+            else
+            {
+                ItemsInCart = false;
+                NoItemsInCart = true;
             }
         }
     }
