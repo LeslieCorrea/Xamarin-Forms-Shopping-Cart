@@ -25,7 +25,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
+                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" Margin="2" />
                                 <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
                                 <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
                                             Command="{Binding Source={x:Reference CartDetailPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
