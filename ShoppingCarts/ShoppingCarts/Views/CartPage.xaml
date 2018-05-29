@@ -12,7 +12,9 @@
             <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             <StackLayout IsVisible="{Binding IsNotBusy}">
                 <customContentView:CustomNavigationBar x:Name="NavigationBarView" Title="{Binding Title}" />
-                <ListView x:Name="ItemsListView"
+            </StackLayout>
+            <ListView x:Name="ItemsListView"
+                          IsVisible="{Binding IsNotBusy}"
                           HasUnevenRows="True"
                           VerticalOptions="FillAndExpand"
                           HorizontalOptions="FillAndExpand"
@@ -20,20 +22,19 @@
                           BackgroundColor="Aqua"
                           SeparatorVisibility="Default"
                           ItemsSource="{Binding ShoppingItems}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
-                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                                    <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" />
+                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                                <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
                                             Command="{Binding Source={x:Reference CartPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

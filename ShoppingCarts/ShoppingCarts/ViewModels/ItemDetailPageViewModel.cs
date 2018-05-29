@@ -72,6 +72,26 @@ namespace ShoppingCarts.ViewModels
                     Settings.ItemStatus4 = !Settings.ItemStatus4;
                 if (index == 5)
                     Settings.ItemStatus5 = !Settings.ItemStatus5;
+                if (index == 6)
+                    Settings.ItemStatus6 = !Settings.ItemStatus6;
+                if (index == 7)
+                    Settings.ItemStatus7 = !Settings.ItemStatus7;
+                if (index == 8)
+                    Settings.ItemStatus8 = !Settings.ItemStatus8;
+                if (index == 9)
+                    Settings.ItemStatus9 = !Settings.ItemStatus9;
+                if (index == 10)
+                    Settings.ItemStatus10 = !Settings.ItemStatus10;
+                if (index == 11)
+                    Settings.ItemStatus11 = !Settings.ItemStatus11;
+                if (index == 12)
+                    Settings.ItemStatus12 = !Settings.ItemStatus12;
+                if (index == 13)
+                    Settings.ItemStatus13 = !Settings.ItemStatus13;
+                if (index == 14)
+                    Settings.ItemStatus14 = !Settings.ItemStatus14;
+                if (index == 15)
+                    Settings.ItemStatus15 = !Settings.ItemStatus15;
 
                 ShoppingItem.Status = !ShoppingItem.Status;
 
