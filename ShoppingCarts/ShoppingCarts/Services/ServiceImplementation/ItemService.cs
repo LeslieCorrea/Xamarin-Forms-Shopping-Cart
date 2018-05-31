@@ -24,7 +24,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
 
             Items.Add(new Item
             {
-                Image = "http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG37.png",
+                Image = "https://www.shareicon.net/data/128x128/2016/05/02/758874_package_512x512.png",
                 Name = "Item1",
                 Index = 1,
                 Status = Settings.ItemStatus1
@@ -80,7 +80,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
             });
             Items.Add(new Item
             {
-                Image = "http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG37.png",
+                Image = "https://www.shareicon.net/data/128x128/2016/05/02/758874_package_512x512.png",
                 Name = "Item9",
                 Index = 9,
                 Status = Settings.ItemStatus9
@@ -122,7 +122,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
             });
             Items.Add(new Item
             {
-                Image = "https://www.shareicon.net/data/128x128/2016/05/04/759629_wine_512x512.png",
+                Image = "https://www.shareicon.net/data/128x128/2017/04/19/884064_box_512x512.png",
                 Name = "Item15",
                 Index = 15,
                 Status = Settings.ItemStatus15
