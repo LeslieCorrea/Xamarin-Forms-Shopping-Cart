@@ -1,11 +1,8 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
 
 namespace ShoppingCarts.Droid
 {
@@ -21,6 +18,8 @@ namespace ShoppingCarts.Droid
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            CachedImageRenderer.Init(enableFastRenderer: true);
 
             base.OnCreate(bundle);
 

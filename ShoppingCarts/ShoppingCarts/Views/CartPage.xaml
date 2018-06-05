@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCarts.Views.CartPage"
              xmlns:customContentView="clr-namespace:ShoppingCarts.ContentView;assembly=ShoppingCarts"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="false"
              x:Name="CartPage"
@@ -26,7 +27,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50" Margin="2" />
+                                <ffimageloading:CachedImage Source="{Binding Image}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" />
                                 <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
                                 <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
                                             Command="{Binding Source={x:Reference CartPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
