@@ -70,7 +70,7 @@
                 </ContentView.GestureRecognizers>
             </ContentView>
 
-            <BoxView BackgroundColor="Red" Grid.ColumnSpan="3"
+            <BoxView BackgroundColor="#2196F3" Grid.ColumnSpan="3"
                              Grid.Row="1" Grid.Column="0" />
         </Grid>
     </ContentView.Content>
