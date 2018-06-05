@@ -49,10 +49,10 @@ namespace ShoppingCarts.ViewModels
             ButtonName = ShoppingItem.ButtonText;
             Description = ShoppingItem.Description;
 
-            ButtonClicked = new Command(() => GetDataCommand(ShoppingItem));
+            ButtonClicked = new Command(() => OnButtonClickedCommand(ShoppingItem));
         }
 
-        private void GetDataCommand(Item ShoppingItem)
+        private void OnButtonClickedCommand(Item ShoppingItem)
         {
             if (IsBusy)
                 return;
