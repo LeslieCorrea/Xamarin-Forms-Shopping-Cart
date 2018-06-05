@@ -32,6 +32,14 @@ namespace ShoppingCarts.ViewModels
             set { SetProperty(ref buttonName, value); }
         }
 
+        public string description;
+
+        public string Description
+        {
+            get { return description; }
+            set { SetProperty(ref description, value); }
+        }
+
         public Command ButtonClicked { get; set; }
 
         public ItemDetailPageViewModel(Item ShoppingItem)
@@ -39,6 +47,7 @@ namespace ShoppingCarts.ViewModels
             ImageSource = ShoppingItem.Image;
             ItemName = ShoppingItem.Name;
             ButtonName = ShoppingItem.ButtonText;
+            Description = ShoppingItem.Description;
 
             ButtonClicked = new Command(() => GetDataCommand(ShoppingItem));
         }

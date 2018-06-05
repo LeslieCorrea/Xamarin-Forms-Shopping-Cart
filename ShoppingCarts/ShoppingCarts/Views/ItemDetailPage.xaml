@@ -8,7 +8,8 @@
         <StackLayout Orientation="Vertical" Padding="20,20,20,20">
             <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Center" LoadingPlaceholder="Items"
                    Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
-            <Label Text="{Binding ItemName}" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,0" TextColor="Black" />
+            <Label Text="{Binding ItemName}" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,30" TextColor="Black" />
+            <Label Text="{Binding Description}" TextColor="Black" />
             <Button x:Name="AddCartButton" Text="{Binding ButtonName}" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
