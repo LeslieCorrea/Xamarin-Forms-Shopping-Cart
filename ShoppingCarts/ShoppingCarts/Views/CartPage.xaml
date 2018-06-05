@@ -20,7 +20,7 @@
                           VerticalOptions="FillAndExpand"
                           HorizontalOptions="FillAndExpand"
                           ItemSelected="OnItemSelected"
-                          BackgroundColor="Aqua"
+                          BackgroundColor="White"
                           SeparatorVisibility="Default"
                           ItemsSource="{Binding ShoppingItems}">
                 <ListView.ItemTemplate>
