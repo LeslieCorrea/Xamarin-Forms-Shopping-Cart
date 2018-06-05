@@ -11,7 +11,7 @@
                 <Label Text="There are no items in the cart" FontSize="Medium" VerticalOptions="Center" />
             </StackLayout>
             <StackLayout IsVisible="{Binding ItemsInCart}">
-                <Button Text="Remove all items form cart" Command="{Binding RemoveAllButton}" />
+                <Button Text="Remove all items form cart" Command="{Binding RemoveAllButton}" BackgroundColor="#2196F3" TextColor="White" Margin="10" />
             </StackLayout>
             <ListView x:Name="ItemsListView"
                           HasUnevenRows="True"
@@ -28,7 +28,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <ffimageloading:CachedImage Source="{Binding Image}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" />
                                 <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                                <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand"
+                                <Button Text="{Binding ButtonText}" HorizontalOptions="EndAndExpand" BackgroundColor="#2196F3" TextColor="White" Margin="10"
                                             Command="{Binding Source={x:Reference CartDetailPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
                             </StackLayout>
                         </ViewCell>

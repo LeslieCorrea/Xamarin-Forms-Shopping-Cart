@@ -9,7 +9,7 @@
             <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Center" LoadingPlaceholder="Items"
                    Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
             <Label Text="{Binding ItemName}" HorizontalOptions="Center" Margin="0,30,0,0" />
-            <Button x:Name="AddCartButton" Text="{Binding ButtonName}" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" />
+            <Button x:Name="AddCartButton" Text="{Binding ButtonName}" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
