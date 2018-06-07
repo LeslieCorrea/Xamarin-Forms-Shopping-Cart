@@ -1,4 +1,5 @@
-﻿using ShoppingCarts.ViewModels;
+﻿using ShoppingCarts.Model;
+using ShoppingCarts.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,8 +29,15 @@ namespace ShoppingCarts.Views
             _ViewModel.GetData.Execute(null);
         }
 
-        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var product = ((ListView)sender).SelectedItem as ProductDetail;
+
+            if (product == null)
+                return;
+
+            await Navigation.PushAsync(new SecondDetailPage(product));
+
             ((ListView)sender).SelectedItem = null;
         }
     }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="ShoppingCarts.Views.SecondDetailPage"
+             x:Name="SecondDetailPage"
+             Title="Product Details">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20,20,20,20">
+            <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Center" LoadingPlaceholder="Items"
+                   Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
+            <Label Text="{Binding ItemName}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="0,30,0,30" TextColor="Black" />
+            <Label Text="{Binding Description}" TextColor="Black" FontSize="Medium" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
