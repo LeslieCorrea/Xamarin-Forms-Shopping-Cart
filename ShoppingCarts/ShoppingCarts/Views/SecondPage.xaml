@@ -20,10 +20,19 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <ffimageloading:CachedImage Source="{Binding ImageUrl}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" />
-                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                            </StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ffimageloading:CachedImage Source="{Binding ImageUrl}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
+                                <Label Text="{Binding ShortDescription}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" TextColor="Black" />
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
