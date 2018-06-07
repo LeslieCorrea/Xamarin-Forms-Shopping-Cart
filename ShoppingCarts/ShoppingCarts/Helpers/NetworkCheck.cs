@@ -2,7 +2,7 @@
 
 namespace ShoppingCarts.Helpers
 {
-    public class NetworkCheck
+    public static class NetworkCheck
     {
         public static bool IsInternet()
         {
