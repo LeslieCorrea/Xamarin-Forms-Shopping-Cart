@@ -50,5 +50,12 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>ShoppingCarts</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
