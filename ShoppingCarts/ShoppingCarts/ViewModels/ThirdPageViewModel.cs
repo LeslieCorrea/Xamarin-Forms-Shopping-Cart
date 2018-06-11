@@ -10,11 +10,39 @@ namespace ShoppingCarts.ViewModels
     {
         public Command GetData { get; set; }
 
+        public Command OnItemButtonClickedCommand { get; set; }
+
         public ObservableRangeCollection<Product> Products { get; } = new ObservableRangeCollection<Product>();
 
         public ThirdPageViewModel()
         {
             GetData = new Command(() => GetDataCommand());
+            OnItemButtonClickedCommand = new Command((e) => ExecuteButtonClick(e));
+        }
+
+        private void ExecuteButtonClick(object e)
+        {
+            if (IsBusy)
+                return;
+            try
+            {
+                IsBusy = true;
+
+                var selectedItem = (Product)e;
+                App.DAUtil.DeleteProduct(selectedItem);
+
+                var vList = App.DAUtil.GetAllProducts();
+                Products.Clear();
+                Products.ReplaceRange(vList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception is " + ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private void GetDataCommand()

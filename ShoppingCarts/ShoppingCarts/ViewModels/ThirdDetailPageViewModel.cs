@@ -55,6 +55,24 @@ namespace ShoppingCarts.ViewModels
 
         private void OnButtonClickedCommand(Product product)
         {
+            if (IsBusy)
+                return;
+            try
+            {
+                IsBusy = true;
+
+                App.DAUtil.DeleteProduct(product);
+
+                MessagingCenter.Send(this, "Deleted");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception is " + ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ShoppingCarts.Views.ThirdPage"
+             x:Name="ProductPage"
              Title="Product Page">
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="White">
             <StackLayout IsVisible="{Binding IsBusy}">
                 <ActivityIndicator x:Name="Loader" HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             </StackLayout>
-            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" />
+            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" BackgroundColor="#2196F3" TextColor="White" />
             <ListView x:Name="ItemsListView"
                           IsVisible="{Binding IsNotBusy}"
                           HasUnevenRows="True"
@@ -36,7 +37,8 @@
                                 <Label Text="{Binding ProductName}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
                                 <Label Text="{Binding ProductShortDescription}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" TextColor="Black" />
                                 <Switch x:Name="StatusSwitch" VerticalOptions="Start" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" IsToggled="{Binding ProductStatus}" />
-                                <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" />
+                                <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White"
+                                         Command="{Binding Source={x:Reference ProductPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

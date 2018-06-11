@@ -15,6 +15,11 @@ namespace ShoppingCarts.Views
             InitializeComponent();
 
             BindingContext = _ViewModel = new ThirdDetailPageViewModel(product);
+
+            MessagingCenter.Subscribe<ThirdDetailPageViewModel>(this, "Deleted", (sender) =>
+            {
+                Navigation.PopAsync();
+            });
         }
     }
 }
