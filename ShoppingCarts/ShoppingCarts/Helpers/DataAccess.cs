@@ -22,17 +22,17 @@ namespace ShoppingCarts.Helpers
             return dbConn.Query<Product>("Select * From [Product]");
         }
 
-        public int SaveEmployee(Product aProduct)
+        public int SaveProduct(Product aProduct)
         {
             return dbConn.Insert(aProduct);
         }
 
-        public int DeleteEmployee(Product aProduct)
+        public int DeleteProduct(Product aProduct)
         {
             return dbConn.Delete(aProduct);
         }
 
-        public int EditEmployee(Product aProduct)
+        public int EditProduct(Product aProduct)
         {
             return dbConn.Update(aProduct);
         }

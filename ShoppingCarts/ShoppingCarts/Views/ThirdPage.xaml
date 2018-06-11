@@ -1,13 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ShoppingCarts.Views.ThirdPage"
-             Title="Third Page">
+             Title="Product Page">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="0" BackgroundColor="White">
+            <StackLayout IsVisible="{Binding IsBusy}">
+                <ActivityIndicator x:Name="Loader" HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" />
+            <ListView x:Name="ItemsListView"
+                          IsVisible="{Binding IsNotBusy}"
+                          HasUnevenRows="True"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand"
+                          ItemSelected="OnItemSelected"
+                          BackgroundColor="White"
+                          SeparatorVisibility="Default"
+                          ItemsSource="{Binding Products}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ffimageloading:CachedImage Source="{Binding ProductImageUrl}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+                                <Label Text="{Binding ProductName}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
+                                <Label Text="{Binding ProductShortDescription}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" TextColor="Black" />
+                                <Switch x:Name="StatusSwitch" VerticalOptions="Start" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" IsToggled="{Binding ProductStatus}" />
+                                <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
