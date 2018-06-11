@@ -55,7 +55,7 @@ namespace ShoppingCarts.ViewModels
             {
                 IsBusy = true;
 
-                if (Name == null && ImageUrl == null && Description == null && ShortDescription == null)
+                if (Name == null || ImageUrl == null || Description == null || ShortDescription == null)
                 {
                     MessagingCenter.Send(this, "NoDataAlert");
                 }
