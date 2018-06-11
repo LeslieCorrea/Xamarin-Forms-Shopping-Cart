@@ -16,16 +16,16 @@ namespace ShoppingCarts.Views
 
             BindingContext = _ViewModel = new AddProductPageViewModel();
 
-            MessagingCenter.Subscribe<AddProductPageViewModel>(this, "NoDataAlert", (sender) =>
+            MessagingCenter.Subscribe<AddProductPageViewModel>(this, "NoDataAlert", async (sender) =>
             {
-                DisplayAlert("Enter Data Alert", "Please enter data", "Ok");
+                await DisplayAlert("Enter Data Alert", "Please enter data", "Ok");
             });
 
-            MessagingCenter.Subscribe<AddProductPageViewModel>(this, "Success", (sender) =>
+            MessagingCenter.Subscribe<AddProductPageViewModel>(this, "Success", async (sender) =>
             {
-                DisplayAlert("Success", "Success", "Ok");
+                await DisplayAlert("Success", "Success", "Ok");
 
-                Navigation.PopAsync();
+                await Navigation.PopAsync();
             });
         }
     }
