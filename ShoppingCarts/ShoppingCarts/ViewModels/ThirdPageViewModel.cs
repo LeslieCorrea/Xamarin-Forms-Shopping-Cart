@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using MvvmHelpers;
 using ShoppingCarts.Model;
 using Xamarin.Forms;
@@ -56,6 +55,26 @@ namespace ShoppingCarts.ViewModels
                 var vList = App.DAUtil.GetAllProducts();
                 Products.Clear();
                 Products.ReplaceRange(vList);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception is : " + e);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public void SwitchToggled(Product product)
+        {
+            if (IsBusy)
+                return;
+            try
+            {
+                IsBusy = true;
+
+                App.DAUtil.EditProduct(product);
             }
             catch (Exception e)
             {

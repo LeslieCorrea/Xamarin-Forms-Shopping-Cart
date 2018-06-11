@@ -39,5 +39,12 @@ namespace ShoppingCarts.Views
         {
             await Navigation.PushAsync(new AddProductPage());
         }
+
+        private void SwitchToggled(object sender, ToggledEventArgs e)
+        {
+            var switchItem = (Switch)sender;
+            var product = (Product)switchItem.BindingContext;
+            _ViewModel.SwitchToggled(product);
+        }
     }
 }
