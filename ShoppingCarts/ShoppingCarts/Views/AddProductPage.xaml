@@ -4,25 +4,28 @@
              x:Class="ShoppingCarts.Views.AddProductPage"
              Title="Add Product">
     <ContentPage.Content>
-        <TableView Intent="Settings" BackgroundColor="White">
-            <TableRoot>
-                <TableSection Title="Add new product">
-                    <EntryCell x:Name="txtName" Label="Product Name" Keyboard="Text" Text="{Binding Name}" />
-                    <EntryCell x:Name="txtImageUrl" Label="Image Url" Keyboard="Text" Text="{Binding ImageUrl}" />
-                    <EntryCell x:Name="txtShortDescription" Label="Short Description" Keyboard="Text" Text="{Binding ShortDescription}" />
-                    <EntryCell x:Name="txtDescription" Label="Description" Keyboard="Text" Text="{Binding Description}" />
-                    <ViewCell>
-                        <ContentView Padding="0,0">
-                            <ContentView.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" iOS="10,0" WinPhone="0,15,0,0" />
-                            </ContentView.Padding>
-                            <ContentView.Content>
-                                <Button BackgroundColor="#fd6d6d" Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" />
-                            </ContentView.Content>
-                        </ContentView>
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </TableView>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Add new product:" FontSize="Large" TextColor="Black" Margin="10" />
+            <TableView Intent="Settings" BackgroundColor="White">
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell x:Name="txtName" Label="Product Name" Keyboard="Text" Text="{Binding Name}" />
+                        <EntryCell x:Name="txtImageUrl" Label="Image Url" Keyboard="Text" Text="{Binding ImageUrl}" />
+                        <EntryCell x:Name="txtShortDescription" Label="Short Description" Keyboard="Text" Text="{Binding ShortDescription}" />
+                        <EntryCell x:Name="txtDescription" Label="Description" Keyboard="Text" Text="{Binding Description}" />
+                        <ViewCell>
+                            <ContentView Padding="0,0">
+                                <ContentView.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0" WinPhone="0,15,0,0" />
+                                </ContentView.Padding>
+                                <ContentView.Content>
+                                    <Button  Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" BackgroundColor="#2196F3" Margin="10,0,10,0" />
+                                </ContentView.Content>
+                            </ContentView>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
