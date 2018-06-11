@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="ShoppingCarts.Views.ThirdDetailPage"
+             Title="Product Details">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20,20,20,20">
+            <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Center" LoadingPlaceholder="Items"
+                   Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
+            <Label Text="{Binding ItemName}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="0,30,0,30" TextColor="Black" />
+            <Label Text="{Binding Description}" TextColor="Black" />
+            <Switch IsToggled="{Binding Status}" />
+            <Button x:Name="RemoveButton" Text="Remove" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
