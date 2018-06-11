@@ -74,5 +74,27 @@ namespace ShoppingCarts.ViewModels
                 IsBusy = false;
             }
         }
+
+        public void SwitchToggled(bool toggled)
+        {
+            if (IsBusy)
+                return;
+            try
+            {
+                IsBusy = true;
+
+                product.ProductStatus = toggled;
+
+                App.DAUtil.EditProduct(product);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception is : " + e);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }

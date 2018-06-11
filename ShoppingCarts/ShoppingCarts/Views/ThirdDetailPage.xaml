@@ -10,7 +10,7 @@
                    Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
             <Label Text="{Binding ItemName}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="0,30,0,30" TextColor="Black" />
             <Label Text="{Binding Description}" TextColor="Black" />
-            <Switch IsToggled="{Binding Status}" />
+            <Switch IsToggled="{Binding Status,Mode=TwoWay}" Toggled="SwitchToggled" />
             <Button x:Name="RemoveButton" Text="Remove" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>

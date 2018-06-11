@@ -21,5 +21,13 @@ namespace ShoppingCarts.Views
                 await Navigation.PopAsync();
             });
         }
+
+        private void SwitchToggled(object sender, ToggledEventArgs e)
+        {
+            var switchItem = (Switch)sender;
+            var isSwitchToggled = switchItem.IsToggled;
+
+            _ViewModel.SwitchToggled(isSwitchToggled);
+        }
     }
 }
