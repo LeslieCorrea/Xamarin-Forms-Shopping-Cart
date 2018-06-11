@@ -17,10 +17,10 @@ namespace ShoppingCarts.Views
 
             BindingContext = _ViewModel = new SecondPageViewModel();
 
-            MessagingCenter.Subscribe<SecondPageViewModel>(this, "NetworkAlert", (sender) =>
-            {
-                DisplayAlert("Network Alert", "No network", "Ok");
-            });
+            MessagingCenter.Subscribe<SecondPageViewModel>(this, "NetworkAlert", async (sender) =>
+             {
+                 await DisplayAlert("Network Alert", "No network", "Ok");
+             });
         }
 
         protected override void OnAppearing()
