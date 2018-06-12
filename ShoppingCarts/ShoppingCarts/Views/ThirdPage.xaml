@@ -37,7 +37,7 @@
                                 <Label Text="{Binding ProductName}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
                                 <Label Text="{Binding ProductShortDescription}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" TextColor="Black" />
                                 <StackLayout Grid.Row="0" Grid.Column="2" Margin="10" Orientation="Horizontal" BackgroundColor="White" VerticalOptions="CenterAndExpand">
-                                    <Label Text="Status" TextColor="Black" VerticalOptions="Center" />
+                                    <Label Text="Status" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
                                     <Switch x:Name="StatusSwitch" IsToggled="{Binding ProductStatus,Mode=TwoWay}" Toggled="SwitchToggled" VerticalOptions="Center" />
                                 </StackLayout>
                                 <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White"

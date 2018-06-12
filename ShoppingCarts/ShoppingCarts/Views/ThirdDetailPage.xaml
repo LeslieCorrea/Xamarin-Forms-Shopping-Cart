@@ -5,12 +5,15 @@
              x:Class="ShoppingCarts.Views.ThirdDetailPage"
              Title="Product Details">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="20,20,20,20">
+        <StackLayout Orientation="Vertical" Padding="20,20,20,20" BackgroundColor="White">
             <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Center" LoadingPlaceholder="Items"
                    Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" />
             <Label Text="{Binding ItemName}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="0,30,0,30" TextColor="Black" />
             <Label Text="{Binding Description}" TextColor="Black" />
-            <Switch IsToggled="{Binding Status,Mode=TwoWay}" Toggled="SwitchToggled" />
+            <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                <Label Text="Status" TextColor="Black" FontAttributes="Bold" />
+                <Switch IsToggled="{Binding Status,Mode=TwoWay}" Toggled="SwitchToggled" />
+            </StackLayout>
             <Button x:Name="RemoveButton" Text="Remove" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
