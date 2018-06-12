@@ -36,7 +36,10 @@
                                 <ffimageloading:CachedImage Source="{Binding ProductImageUrl}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="2" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
                                 <Label Text="{Binding ProductName}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
                                 <Label Text="{Binding ProductShortDescription}" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" TextColor="Black" />
-                                <Switch x:Name="StatusSwitch" VerticalOptions="Start" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" IsToggled="{Binding ProductStatus,Mode=TwoWay}" Toggled="SwitchToggled" Margin="10" />
+                                <StackLayout Grid.Row="0" Grid.Column="2" Margin="10" Orientation="Horizontal" BackgroundColor="White" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Status" TextColor="Black" VerticalOptions="Center" />
+                                    <Switch x:Name="StatusSwitch" IsToggled="{Binding ProductStatus,Mode=TwoWay}" Toggled="SwitchToggled" VerticalOptions="Center" />
+                                </StackLayout>
                                 <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White"
                                          Command="{Binding Source={x:Reference ProductPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" Margin="10" />
                             </Grid>
