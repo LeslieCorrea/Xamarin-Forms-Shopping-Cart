@@ -1,6 +1,7 @@
-﻿using ShoppingCarts.Model;
+﻿using Microsoft.AppCenter.Analytics;
+using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
-
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,6 +33,11 @@ namespace ShoppingCarts.Views
 
             if (shoppingItem == null)
                 return;
+
+            Analytics.TrackEvent("Item detail clicked", new Dictionary<string, string> {
+               { "Item Name",shoppingItem.Name },
+               { "Item Image Url", shoppingItem.Image}
+            });
 
             await Navigation.PushAsync(new ItemDetailPage(shoppingItem));
 
