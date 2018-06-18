@@ -33,7 +33,8 @@ namespace ShoppingCarts
         {
             // Handle when your app starts
 
-            AppCenter.Start(ApiKeys.AndroidAppCenterKey + ApiKeys.iOSAppCenterKey, typeof(Analytics), typeof(Crashes));
+            //Uncomment later for app center analytices and crashes
+            //AppCenter.Start(ApiKeys.AndroidAppCenterKey + ApiKeys.iOSAppCenterKey, typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
