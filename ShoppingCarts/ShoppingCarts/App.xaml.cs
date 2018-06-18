@@ -1,4 +1,7 @@
-﻿using ShoppingCarts.Helpers;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using ShoppingCarts.Helpers;
 using Xamarin.Forms;
 
 namespace ShoppingCarts
@@ -29,6 +32,8 @@ namespace ShoppingCarts
         protected override void OnStart()
         {
             // Handle when your app starts
+
+            AppCenter.Start(ApiKeys.AndroidAppCenterKey + ApiKeys.iOSAppCenterKey, typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
