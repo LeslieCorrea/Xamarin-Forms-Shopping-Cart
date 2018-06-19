@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AppCenter.Analytics;
 using MvvmHelpers;
 using ShoppingCarts.Model;
 using Xamarin.Forms;
@@ -72,6 +74,12 @@ namespace ShoppingCarts.ViewModels
                     };
 
                     App.DAUtil.SaveProduct(vProduct);
+
+                    Analytics.TrackEvent("Add product clicked", new Dictionary<string, string> {
+                       { "Product Name",vProduct.ProductName },
+                       { "Product Image Url", vProduct.ProductImageUrl},
+                       { "Product Status", vProduct.ProductStatus.ToString()}
+                    });
 
                     MessagingCenter.Send(this, "Success");
                 }

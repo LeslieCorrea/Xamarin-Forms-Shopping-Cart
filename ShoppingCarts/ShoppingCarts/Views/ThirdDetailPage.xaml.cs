@@ -1,5 +1,7 @@
-﻿using ShoppingCarts.Model;
+﻿using Microsoft.AppCenter.Analytics;
+using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,6 +28,10 @@ namespace ShoppingCarts.Views
         {
             var switchItem = (Switch)sender;
             var isSwitchToggled = switchItem.IsToggled;
+
+            Analytics.TrackEvent("Switch Toggled", new Dictionary<string, string> {
+               { "Is Switch Toggled",isSwitchToggled.ToString() }
+            });
 
             _ViewModel.SwitchToggled(isSwitchToggled);
         }

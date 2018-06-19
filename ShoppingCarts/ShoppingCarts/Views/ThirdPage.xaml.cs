@@ -1,5 +1,7 @@
-﻿using ShoppingCarts.Model;
+﻿using Microsoft.AppCenter.Analytics;
+using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,6 +31,12 @@ namespace ShoppingCarts.Views
 
             if (product == null)
                 return;
+
+            Analytics.TrackEvent("Product detail clicked", new Dictionary<string, string> {
+               { "ProductName Name",product.ProductName },
+               { "Product Image Url", product.ProductImageUrl},
+               { "Product Status", product.ProductStatus.ToString()}
+            });
 
             await Navigation.PushAsync(new ThirdDetailPage(product));
 

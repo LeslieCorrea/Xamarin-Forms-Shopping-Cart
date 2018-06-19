@@ -1,4 +1,5 @@
-﻿using MvvmHelpers;
+﻿using Microsoft.AppCenter.Analytics;
+using MvvmHelpers;
 using ShoppingCarts.Helpers;
 using ShoppingCarts.Model;
 using ShoppingCarts.Services.ServiceInterface;
@@ -82,6 +83,8 @@ namespace ShoppingCarts.ViewModels
 
                 ItemsInCart = false;
                 NoItemsInCart = true;
+
+                Analytics.TrackEvent("Remove all items from cart clicked");
             }
             catch (Exception e)
             {
