@@ -33,7 +33,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
 
             Items.Add(new Item
             {
-                Image = "Items",
+                Image = "https://www.shareicon.net/data/128x128/2017/01/16/871652_food_512x512.png",
                 Name = "Item2",
                 Index = 2,
                 Status = Settings.ItemStatus2,
@@ -83,7 +83,7 @@ namespace ShoppingCarts.Services.ServiceImplementation
             });
             Items.Add(new Item
             {
-                Image = "Items",
+                Image = "https://www.shareicon.net/data/128x128/2016/08/18/812988_food_512x512.png",
                 Name = "Item8",
                 Index = 8,
                 Status = Settings.ItemStatus8,
