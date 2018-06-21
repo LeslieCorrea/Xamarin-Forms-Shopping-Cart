@@ -12,5 +12,6 @@ namespace ShoppingCarts.Model
         public string ButtonText { get; set; }
         public int Index { get; set; }
         public string Description { get; set; }
+        public string ShortDescription { get; set; }
     }
 }
