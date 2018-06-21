@@ -29,7 +29,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <ffimageloading:CachedImage Source="{Binding Image}" LoadingPlaceholder="Items" HeightRequest="50" WidthRequest="50" Margin="10,2,2,2" />
                                 <StackLayout Margin="10,0,2,0">
-                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Name}"  FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"  Margin="0,4,0,0" FontSize="Large" />
                                     <Label Text="{Binding ShortDescription}" HorizontalTextAlignment="Start" VerticalOptions="End" TextColor="Black" Margin="0,4,0,0" />
                                 </StackLayout>
                                 <Button Text="{Binding ButtonText}" FontSize="Micro" HorizontalOptions="EndAndExpand" BackgroundColor="#2196F3" TextColor="White" Margin="10"
