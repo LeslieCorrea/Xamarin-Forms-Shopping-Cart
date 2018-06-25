@@ -94,7 +94,7 @@ namespace ShoppingCarts.ViewModels
                 if (selectedItem.Status)
                     ItemsList[index - 1].ButtonText = "Add to cart";
                 else
-                    ItemsList[index - 1].ButtonText = "Remove from cart";
+                    ItemsList[index - 1].ButtonText = "Remove";
 
                 selectedItem.Status = !selectedItem.Status;
 
@@ -122,7 +122,7 @@ namespace ShoppingCarts.ViewModels
                 for (int i = 0; i < ItemsList.Count; i++)
                 {
                     if (ItemsList[i].Status)
-                        ItemsList[i].ButtonText = "Remove from cart";
+                        ItemsList[i].ButtonText = "Remove";
                     else
                         ItemsList[i].ButtonText = "Add to cart";
                 }
