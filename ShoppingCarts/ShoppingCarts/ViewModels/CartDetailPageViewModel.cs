@@ -175,7 +175,7 @@ namespace ShoppingCarts.ViewModels
                 for (int i = 0; i < ItemsList.Count; i++)
                 {
                     if (ItemsList[i].Status)
-                        ItemsList[i].ButtonText = "Remove from cart";
+                        ItemsList[i].ButtonText = "Remove";
                     else
                         ItemsList[i].ButtonText = "Add to cart";
                 }
