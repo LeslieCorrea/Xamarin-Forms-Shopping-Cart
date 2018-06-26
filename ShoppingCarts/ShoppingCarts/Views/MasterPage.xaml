@@ -4,17 +4,16 @@
              x:Class="ShoppingCarts.Views.MasterPage"
              xmlns:local="using:ShoppingCarts.Model"
              xmlns:localpages="clr-namespace:ShoppingCarts.Views"
-			 Padding="0,40,0,0"
 			 Icon="hamburger.png"
 			 Title="Shopping carts">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="dp" WidthRequest="70" HeightRequest="70" Margin="15,0,0,0" HorizontalOptions="Start" />
-                <Label Text="Hello, Leslie Correa" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" VerticalOptions="Center" />
+            <StackLayout Orientation="Horizontal" BackgroundColor="#808080">
+                <Image Source="dp" WidthRequest="70" HeightRequest="70" Margin="15,10,0,10" HorizontalOptions="Start" />
+                <Label Text="Hello, Leslie Correa" TextColor="White" FontSize="Large" FontAttributes="Bold, Italic" Margin="10,0,0,0" VerticalOptions="Center" />
                 <!--<Image Source="Cart" WidthRequest="50" HeightRequest="50" Margin="0,0,30,0" HorizontalOptions="EndAndExpand" />-->
             </StackLayout>
-            <ListView x:Name="listView">
+            <ListView x:Name="listView" Margin="0,20,0,0">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MasterPageItem}">
                         <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" />
