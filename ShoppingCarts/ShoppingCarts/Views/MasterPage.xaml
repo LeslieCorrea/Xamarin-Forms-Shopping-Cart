@@ -9,7 +9,11 @@
 			 Title="Shopping carts">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="Cart" WidthRequest="50" HeightRequest="50" Margin="5,0,0,0" HorizontalOptions="Start"/>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="dp" WidthRequest="70" HeightRequest="70" Margin="15,0,0,0" HorizontalOptions="Start" />
+                <Label Text="Hello, Leslie Correa" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" VerticalOptions="Center" />
+                <!--<Image Source="Cart" WidthRequest="50" HeightRequest="50" Margin="0,0,30,0" HorizontalOptions="EndAndExpand" />-->
+            </StackLayout>
             <ListView x:Name="listView">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MasterPageItem}">
@@ -26,7 +30,7 @@
                                     <ColumnDefinition Width="30" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Title}" />
+                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
