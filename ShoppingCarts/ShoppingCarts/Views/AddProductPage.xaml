@@ -16,10 +16,10 @@
                         <ViewCell>
                             <ContentView Padding="0,0">
                                 <ContentView.Padding>
-                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0" WinPhone="0,15,0,0" />
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0"  />
                                 </ContentView.Padding>
                                 <ContentView.Content>
-                                    <Button  Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" BackgroundColor="#2196F3" Margin="10,0,10,0" />
+                                    <Button  Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" BackgroundColor="#808080" Margin="10,0,10,0" HeightRequest="40" HorizontalOptions="End" />
                                 </ContentView.Content>
                             </ContentView>
                         </ViewCell>
