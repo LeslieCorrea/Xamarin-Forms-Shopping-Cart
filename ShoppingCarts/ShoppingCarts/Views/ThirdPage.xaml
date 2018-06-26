@@ -10,7 +10,7 @@
             <StackLayout IsVisible="{Binding IsBusy}">
                 <ActivityIndicator x:Name="Loader" HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             </StackLayout>
-            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" BackgroundColor="#2196F3" TextColor="White" />
+            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" BackgroundColor="#808080" TextColor="White" HeightRequest="40" HorizontalOptions="Center" />
             <ListView x:Name="ItemsListView"
                           IsVisible="{Binding IsNotBusy}"
                           HasUnevenRows="True"
