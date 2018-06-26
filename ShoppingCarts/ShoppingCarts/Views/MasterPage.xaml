@@ -11,12 +11,11 @@
             <StackLayout Orientation="Horizontal" BackgroundColor="#808080">
                 <Image Source="dp" WidthRequest="70" HeightRequest="70" Margin="15,10,0,10" HorizontalOptions="Start" />
                 <Label Text="Hello, Leslie Correa" TextColor="White" FontSize="Large" FontAttributes="Bold, Italic" Margin="10,0,0,0" VerticalOptions="Center" />
-                <!--<Image Source="Cart" WidthRequest="50" HeightRequest="50" Margin="0,0,30,0" HorizontalOptions="EndAndExpand" />-->
             </StackLayout>
             <ListView x:Name="listView" Margin="0,20,0,0">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MasterPageItem}">
-                        <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" />
+                        <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" ImageName="Cart" />
                         <local:MasterPageItem Title="Second Page" TargetType="{x:Type localpages:SecondPage}" />
                         <local:MasterPageItem Title="Third Page" TargetType="{x:Type localpages:ThirdPage}" />
                     </x:Array>
@@ -30,12 +29,13 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
+                                <Image Grid.Column="1" Source="{Binding ImageName}" HorizontalOptions="EndAndExpand" HeightRequest="25" WidthRequest="25" Margin="0,0,15,0" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="Developed by Leslie Correa" HorizontalOptions="Center" VerticalOptions="End" FontSize="Micro" TextColor="Black"/>
+            <Label Text="Developed by Leslie Correa" HorizontalOptions="Center" VerticalOptions="End" FontSize="Micro" TextColor="Black" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
