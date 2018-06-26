@@ -35,6 +35,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Label Text="Developed by Leslie Correa" HorizontalOptions="Center" VerticalOptions="End" FontSize="Micro" TextColor="Black"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
