@@ -10,7 +10,7 @@
             <StackLayout IsVisible="{Binding IsBusy}">
                 <ActivityIndicator x:Name="Loader" HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             </StackLayout>
-            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" Clicked="OnAddProductButtonClicked" BackgroundColor="#808080" TextColor="White" HeightRequest="40" HorizontalOptions="Center" />
+            <Button  Margin="10" IsVisible="{Binding IsNotBusy}" Text="Add product" FontSize="Medium" Clicked="OnAddProductButtonClicked" BackgroundColor="#808080" TextColor="White" HeightRequest="40" HorizontalOptions="End" />
             <ListView x:Name="ItemsListView"
                           IsVisible="{Binding IsNotBusy}"
                           HasUnevenRows="True"
@@ -40,7 +40,7 @@
                                     <Label Text="Status" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
                                     <Switch x:Name="StatusSwitch" IsToggled="{Binding ProductStatus,Mode=TwoWay}" Toggled="SwitchToggled" VerticalOptions="Center" />
                                 </StackLayout>
-                                <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White"
+                                <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#808080" TextColor="White" HeightRequest="40"
                                          Command="{Binding Source={x:Reference ProductPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" Margin="10" />
                             </Grid>
                         </ViewCell>

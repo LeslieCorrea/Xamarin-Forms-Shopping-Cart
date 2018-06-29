@@ -14,7 +14,7 @@
                 <Label Text="Status" TextColor="Black" FontAttributes="Bold" />
                 <Switch IsToggled="{Binding Status,Mode=TwoWay}" Toggled="SwitchToggled" />
             </StackLayout>
-            <Button x:Name="RemoveButton" Text="Remove" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#2196F3" TextColor="White" />
+            <Button x:Name="RemoveButton" Text="Remove" Command="{Binding ButtonClicked}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" BackgroundColor="#808080" TextColor="White"  HeightRequest="40" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

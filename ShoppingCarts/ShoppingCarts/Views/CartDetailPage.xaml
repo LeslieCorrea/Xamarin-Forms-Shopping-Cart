@@ -11,7 +11,7 @@
                 <Label Text="There are no items in the cart" FontSize="Medium" VerticalOptions="Center" />
             </StackLayout>
             <StackLayout IsVisible="{Binding ItemsInCart}">
-                <Button Text="Remove all items form cart" Command="{Binding RemoveAllButton}" BackgroundColor="#808080"  TextColor="White" Margin="10" HeightRequest="40" HorizontalOptions="Center" />
+                <Button Text="Remove all" Command="{Binding RemoveAllButton}" BackgroundColor="#808080" FontSize="Medium"  TextColor="White" Margin="10" HeightRequest="40" HorizontalOptions="End" />
             </StackLayout>
             <ListView x:Name="ItemsListView"
                           HasUnevenRows="True"
