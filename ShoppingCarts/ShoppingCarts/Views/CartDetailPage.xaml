@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ShoppingCarts.Views.CartDetailPage"
-             x:Name="CartDetailPage"
+             x:Name="cartDetailPage"
              Title="Cart Item Detail">
     <ContentPage.Content>
         <StackLayout Spacing="0">
@@ -32,7 +32,7 @@
                                     <Label Text="{Binding ShortDescription}" HorizontalTextAlignment="Start" VerticalOptions="End" TextColor="Black" Margin="0,-2,0,0" />
                                 </StackLayout>
                                 <Button Text="{Binding ButtonText}"  FontSize="Small" HorizontalOptions="EndAndExpand" BackgroundColor="#808080" TextColor="White" FontAttributes="Bold" Margin="10" HeightRequest="1"
-                                        WidthRequest="120" Command="{Binding Source={x:Reference CartDetailPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
+                                        WidthRequest="120" Command="{Binding Source={x:Reference cartDetailPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

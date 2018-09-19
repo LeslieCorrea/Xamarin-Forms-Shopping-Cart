@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ShoppingCarts.Views.ThirdPage"
-             x:Name="ProductPage"
+             x:Name="productPage"
              Title="Product Page">
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="White">
@@ -41,7 +41,7 @@
                                     <Switch x:Name="StatusSwitch" Scale="1" IsToggled="{Binding ProductStatus,Mode=TwoWay}" Toggled="SwitchToggled" VerticalOptions="Center" />
                                 </StackLayout>
                                 <Button x:Name="RemoveButton" VerticalOptions="Start" HorizontalOptions="End" Text="Remove" Grid.Row="1" Grid.Column="2" BackgroundColor="#808080" TextColor="White" HeightRequest="40"
-                                         Command="{Binding Source={x:Reference ProductPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" Margin="10" />
+                                         Command="{Binding Source={x:Reference productPage}, Path=BindingContext.OnItemButtonClickedCommand,Mode=TwoWay}" CommandParameter="{Binding .}" Margin="10" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
