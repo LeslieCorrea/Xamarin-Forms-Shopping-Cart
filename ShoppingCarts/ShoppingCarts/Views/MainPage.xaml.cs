@@ -15,11 +15,6 @@ namespace ShoppingCarts.Views
 
             masterPage.ListView.ItemSelected += OnItemSelected;
 
-            if (Device.RuntimePlatform == Device.UWP)
-            {
-                MasterBehavior = MasterBehavior.Popover;
-            }
-
             MessagingCenter.Subscribe<ContentView.CustomNavigationBar>(this, "presentMenu", (sender) => { IsPresented = !IsPresented; });
 
             MessagingCenter.Subscribe<CartPageViewModel>(this, "RefreshPage", (sender) =>
