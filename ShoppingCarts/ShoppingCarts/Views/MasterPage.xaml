@@ -29,7 +29,11 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
-                                <Image Grid.Column="1" Source="{Binding ImageName}" HorizontalOptions="EndAndExpand" HeightRequest="25" WidthRequest="25" Margin="0,0,15,0" />
+                                <Image Grid.Column="1" Source="{Binding ImageName}" HorizontalOptions="EndAndExpand" HeightRequest="25" WidthRequest="25" Margin="0,0,15,0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCartImageTapped" NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

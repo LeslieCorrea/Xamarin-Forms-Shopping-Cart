@@ -2,6 +2,7 @@
 using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +13,8 @@ namespace ShoppingCarts.Views
     {
         public CartPageViewModel _ViewModel;
 
+        private bool GotoCartDetailPage = false;
+
         public CartPage()
         {
             InitializeComponent();
@@ -19,12 +22,32 @@ namespace ShoppingCarts.Views
             BindingContext = _ViewModel = new CartPageViewModel();
 
             NavigationBarView.FirstNameLabel.SetBinding(Label.TextProperty, "CartCounter");
+
+            GotoCartDetailPage = false;
         }
 
-        protected override void OnAppearing()
+        public CartPage(bool cartImage)
+        {
+            InitializeComponent();
+
+            BindingContext = _ViewModel = new CartPageViewModel();
+
+            NavigationBarView.FirstNameLabel.SetBinding(Label.TextProperty, "CartCounter");
+
+            GotoCartDetailPage = true;
+        }
+
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             _ViewModel.GetData.Execute(null);
+
+            if (GotoCartDetailPage)
+            {
+                GotoCartDetailPage = false;
+                await Task.Delay(50);
+                await Navigation.PushAsync(new CartDetailPage());
+            }
         }
 
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

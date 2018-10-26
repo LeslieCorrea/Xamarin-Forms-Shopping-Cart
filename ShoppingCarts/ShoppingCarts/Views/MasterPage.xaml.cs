@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,6 +13,13 @@ namespace ShoppingCarts.Views
         public MasterPage()
         {
             InitializeComponent();
+        }
+
+        private void OnCartImageTapped(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "GoToCartDetailPage");
+
+            ((MasterDetailPage)Parent).IsPresented = false;
         }
     }
 }
