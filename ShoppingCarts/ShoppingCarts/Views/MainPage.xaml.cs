@@ -19,13 +19,18 @@ namespace ShoppingCarts.Views
 
             MessagingCenter.Subscribe<CartPageViewModel>(this, "RefreshPage", (sender) =>
             {
-                Detail = new NavigationPage(new CartPage());
+                GoToCartPage();
             });
 
             MessagingCenter.Subscribe<MasterPage>(this, "GoToCartDetailPage", (sender) =>
             {
-                Detail = new NavigationPage(new CartPage(true));
+                GoToCartPage();
             });
+        }
+
+        private void GoToCartPage()
+        {
+            Detail = new NavigationPage(new CartPage(true));
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

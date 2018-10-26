@@ -40,12 +40,15 @@ namespace ShoppingCarts.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            _ViewModel.GetData.Execute(null);
+
+            await Task.Run(() =>
+            {
+                _ViewModel.GetData.Execute(null);
+            });
 
             if (GotoCartDetailPage)
             {
                 GotoCartDetailPage = false;
-                await Task.Delay(50);
                 await Navigation.PushAsync(new CartDetailPage());
             }
         }
