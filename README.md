@@ -20,7 +20,7 @@ This project uses [Visual Studio App Center](https://appcenter.ms/) for crash re
 [Visual Studio 2017](https://visualstudio.microsoft.com/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/) with Xamarin.
 
 ### Built With
-* [Visual Studio Professional 2017](https://visualstudio.microsoft.com/vs/professional/) - IDE used
+* [Visual Studio Professional 2017](https://visualstudio.microsoft.com/vs/professional/) with Xamarin - IDE used
 * [Visual Studio App Center](https://appcenter.ms/) - Build Management
 
 ## Screenshots
