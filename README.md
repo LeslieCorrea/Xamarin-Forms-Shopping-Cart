@@ -16,6 +16,9 @@ Here cart page uses persistent storage, second page shows getting data from web 
 
 This project uses [Visual Studio App Center](https://appcenter.ms/) for crash reporting and analytics, which require iOS and android App secret which need to be generated in app center and to be placed [here](https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/ShoppingCarts/ShoppingCarts/Helpers/ApiKeys.cs). This project uses Visual Studio App Center builds, status of the builds will be shown in README.md file.
 
+### Prerequisites
+[Visual Studio 2017](https://visualstudio.microsoft.com/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/) with Xamarin.
+
 ## Screenshots
 <p>
   <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SideMenu.png" width="150" height="300" alt="SideMenu">
