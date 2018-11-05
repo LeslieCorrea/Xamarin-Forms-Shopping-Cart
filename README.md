@@ -19,6 +19,9 @@ This project uses [Visual Studio App Center](https://appcenter.ms/) for crash re
 ### Prerequisites
 [Visual Studio 2017](https://visualstudio.microsoft.com/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/) with Xamarin.
 
+### Deployment
+Clone this repository and open [ShoppingCarts.sln](https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/ShoppingCarts.sln) with Visual Studio or Visual Studio for Mac.
+
 ### Built With
 * [Visual Studio Professional 2017](https://visualstudio.microsoft.com/vs/professional/) with Xamarin - IDE used
 * [Visual Studio App Center](https://appcenter.ms/) - Build Management
