@@ -18,13 +18,13 @@ This project uses [Visual Studio App Center](https://appcenter.ms/) for crash re
 
 ## Screenshots
 <p>
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/CartPage.png" width="150" height="300"      alt="CartPage">
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/CartPageEmpty.png" width="150"          height="300" alt="CartPageEmpty">
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ItemDetail.png" width="150" height="300"      alt="ItemDetail">
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ItemList.png" width="150" height="300"      alt="ItemList">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SideMenu.png" width="150" height="300" alt="SideMenu">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ItemList.png" width="150" height="300" alt="ItemList">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/CartPageEmpty.png" width="150" height="300" alt="CartPageEmpty">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/CartPage.png" width="150" height="300" alt="CartPage">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ItemDetail.png" width="150" height="300" alt="ItemDetail">
   <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/RESTWebService.png" width="150"       height="300" alt="RESTWebService">
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SQLiteDatabase.png" width="150" height="300" alt="SQLiteDatabase">
-  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SideMenu.png" width="150" height="300"      alt="SideMenu">
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SQLiteDatabase.png" width="150" height="300" alt="SQLiteDatabase">  
 </p>
 
 ## Authors
