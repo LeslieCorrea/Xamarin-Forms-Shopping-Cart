@@ -1,7 +1,7 @@
 # Xamarin-Forms-Shopping-Cart
 Xamarin forms shopping cart by replacing toolbar item.
 
-## Build status
+## Build Status
 Platform  | Build status
 ------------- | -------------
 Android build | [![Build Status](https://build.appcenter.ms/v0.1/apps/5a4a818c-0cb4-4be2-81ee-2fb7bc4775cd/branches/master/badge)](https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart)   
@@ -18,6 +18,10 @@ This project uses [Visual Studio App Center](https://appcenter.ms/) for crash re
 
 ### Prerequisites
 [Visual Studio 2017](https://visualstudio.microsoft.com/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/) with Xamarin.
+
+### Built With
+* [Visual Studio Professional 2017](https://visualstudio.microsoft.com/vs/professional/) - IDE used
+* [Visual Studio App Center](https://appcenter.ms/) - Build Management
 
 ## Screenshots
 <p>
