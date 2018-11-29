@@ -1,4 +1,5 @@
-﻿using Microsoft.AppCenter;
+﻿using DLToolkit.Forms.Controls;
+using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using ShoppingCarts.Helpers;
@@ -13,6 +14,8 @@ namespace ShoppingCarts
         public App()
         {
             InitializeComponent();
+
+            FlowListView.Init();
 
             MainPage = new Views.MainPage();
         }

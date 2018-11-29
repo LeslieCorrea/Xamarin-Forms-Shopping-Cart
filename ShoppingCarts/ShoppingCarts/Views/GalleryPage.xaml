@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Name="galleryPage"
+             x:Class="ShoppingCarts.Views.GalleryPage"
+             Title="Gallery">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:FlowListView x:Name="gallery"
+                                   FlowColumnCount="3"
+                                   SeparatorVisibility="None"
+                                   HasUnevenRows="True"
+                                   FlowItemsSource="{Binding ItemsGallery}"
+                                   FlowUseAbsoluteLayoutInternally="True"
+                                   FlowColumnExpand="Proportional"
+                                   BackgroundColor="White">
+                <controls:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <ffimageloading:CachedImage Source="{Binding Image}" LoadingPlaceholder="ItemsGallery" HeightRequest="70" WidthRequest="70" Margin="10,5,2,2" />
+                            <Label HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="End"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   Margin="2"
+                                   Text="{Binding Name}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </controls:FlowListView.FlowColumnTemplate>
+            </controls:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

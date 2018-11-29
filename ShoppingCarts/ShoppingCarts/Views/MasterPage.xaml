@@ -18,6 +18,7 @@
                         <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" ImageName="Cart" />
                         <local:MasterPageItem Title="Second Page" TargetType="{x:Type localpages:SecondPage}" />
                         <local:MasterPageItem Title="Third Page" TargetType="{x:Type localpages:ThirdPage}" />
+                        <local:MasterPageItem Title="Gallery Page" TargetType="{x:Type localpages:GalleryPage}" />
                     </x:Array>
                 </ListView.ItemsSource>
                 <ListView.ItemTemplate>
