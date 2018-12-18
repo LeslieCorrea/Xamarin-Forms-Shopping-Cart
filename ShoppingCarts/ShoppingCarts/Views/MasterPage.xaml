@@ -16,8 +16,8 @@
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MasterPageItem}">
                         <local:MasterPageItem Title="Cart" TargetType="{x:Type localpages:CartPage}" ImageName="Cart" />
-                        <local:MasterPageItem Title="Second Page" TargetType="{x:Type localpages:SecondPage}" />
-                        <local:MasterPageItem Title="Third Page" TargetType="{x:Type localpages:ThirdPage}" />
+                        <local:MasterPageItem Title="Web Service Page" TargetType="{x:Type localpages:SecondPage}" />
+                        <local:MasterPageItem Title="Local Storage Page" TargetType="{x:Type localpages:ThirdPage}" />
                         <local:MasterPageItem Title="Gallery Page" TargetType="{x:Type localpages:GalleryPage}" />
                     </x:Array>
                 </ListView.ItemsSource>
