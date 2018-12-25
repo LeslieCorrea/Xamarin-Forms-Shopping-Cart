@@ -14,6 +14,7 @@
                                    HasUnevenRows="True"
                                    FlowItemsSource="{Binding ItemsGallery}"
                                    FlowUseAbsoluteLayoutInternally="True"
+                                   FlowItemTapped="OnFlowItemTapped"
                                    FlowColumnExpand="Proportional"
                                    BackgroundColor="White">
                 <controls:FlowListView.FlowColumnTemplate>

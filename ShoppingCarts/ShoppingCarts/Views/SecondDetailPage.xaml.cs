@@ -16,5 +16,14 @@ namespace ShoppingCarts.Views
 
             BindingContext = _ViewModel = new SecondDetailPageViewModel(productDetail);
         }
+
+        public SecondDetailPage(ProductDetail productDetail, string title)
+        {
+            InitializeComponent();
+
+            BindingContext = _ViewModel = new SecondDetailPageViewModel(productDetail);
+
+            Title = title;
+        }
     }
 }
