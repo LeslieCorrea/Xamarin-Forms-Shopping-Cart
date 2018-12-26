@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AppCenter.Analytics;
 using MvvmHelpers;
 using ShoppingCarts.Model;
