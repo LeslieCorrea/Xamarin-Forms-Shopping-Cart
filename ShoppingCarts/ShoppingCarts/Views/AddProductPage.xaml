@@ -14,9 +14,9 @@
                         <EntryCell x:Name="txtShortDescription" Label="Short Description" Keyboard="Text" Text="{Binding ShortDescription}" />
                         <EntryCell x:Name="txtDescription" Label="Description" Keyboard="Text" Text="{Binding Description}" />
                         <ViewCell>
-                            <ContentView Padding="0,0">
+                            <ContentView>
                                 <ContentView.Padding>
-                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0"  />
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0" Android="0,0" />
                                 </ContentView.Padding>
                                 <ContentView.Content>
                                     <Button  Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" BackgroundColor="#808080" Margin="10,0,10,0" HeightRequest="40" HorizontalOptions="End" />

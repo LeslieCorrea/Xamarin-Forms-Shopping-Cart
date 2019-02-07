@@ -1,6 +1,7 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using ShoppingCarts.Model;
 using ShoppingCarts.ViewModels;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,7 +44,7 @@ namespace ShoppingCarts.Views
             ((ListView)sender).SelectedItem = null;
         }
 
-        private async void OnAddProductButtonClicked(object sender, SelectedItemChangedEventArgs e)
+        private async void OnAddProductButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddProductPage());
         }
