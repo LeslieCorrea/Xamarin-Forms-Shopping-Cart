@@ -19,6 +19,7 @@
                         <local:MasterPageItem Title="Web Service Page" TargetType="{x:Type localpages:SecondPage}" />
                         <local:MasterPageItem Title="Local Storage Page" TargetType="{x:Type localpages:ThirdPage}" />
                         <local:MasterPageItem Title="Gallery Page" TargetType="{x:Type localpages:GalleryPage}" />
+                        <local:MasterPageItem Title="Chat Page" TargetType="{x:Type localpages:ChatPage}" />
                     </x:Array>
                 </ListView.ItemsSource>
                 <ListView.ItemTemplate>
