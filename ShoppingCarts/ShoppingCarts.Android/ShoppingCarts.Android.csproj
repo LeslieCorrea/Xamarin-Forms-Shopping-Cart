@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="Database\SqliteService.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\CustomEditorRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,5 +155,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_scrolldown.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
