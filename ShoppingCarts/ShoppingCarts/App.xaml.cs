@@ -9,6 +9,7 @@ namespace ShoppingCarts
 {
     public partial class App : Application
     {
+        public static string User = "UserOne";
         private static DataAccess dbUtils;
 
         public App()
