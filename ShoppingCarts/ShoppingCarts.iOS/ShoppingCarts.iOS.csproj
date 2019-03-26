@@ -177,4 +177,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_scrolldown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_scrolldown%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_scrolldown%403x.png" />
+  </ItemGroup>
 </Project>
