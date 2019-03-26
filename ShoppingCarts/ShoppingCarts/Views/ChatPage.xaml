@@ -1,12 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingCarts.Views.ChatPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="ShoppingCarts.Views.ChatPage"
+             xmlns:local="clr-namespace:ShoppingCarts.Helpers"
+             xmlns:chattype="clr-namespace:ShoppingCarts.ContentView"
+             xmlns:controls="clr-namespace:ShoppingCarts.Controls">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ChatTemplateSelector x:Key="MessageTemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid RowSpacing="0"
+           ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:ExtendedListView Grid.Row="0"
+                 ItemTemplate="{StaticResource MessageTemplateSelector}"
+                 ItemsSource="{Binding Messages}"
+                 Margin="0"
+                 ItemTapped="OnListTapped"
+                 Rotation="180"
+                 FlowDirection="RightToLeft"
+                 HasUnevenRows="True" x:Name="ChatList"
+                 VerticalOptions="FillAndExpand"
+                 SeparatorColor="Transparent"
+                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+        </controls:ExtendedListView>
+        <Frame HorizontalOptions="EndAndExpand"
+                                 Margin="0,0,2,15"
+                                 VerticalOptions="End"
+                                 HasShadow="false"
+                                 Grid.Row="0"
+                                 HeightRequest="50" WidthRequest="50"
+                                 CornerRadius="25"
+                                 Padding="1"
+                                 BackgroundColor="White"
+                                 IsVisible="{Binding ShowScrollTap,Mode=TwoWay}">
+            <StackLayout Spacing="3">
+                <Label Text="{Binding PendingMessageCount}"
+                              HorizontalOptions="CenterAndExpand"
+                              IsVisible="{Binding PendingMessageCountVisible}"
+                              VerticalTextAlignment="Center"
+                              TextColor="{DynamicResource primary}" />
+                <Image Source="ic_scrolldown"
+                               WidthRequest="30"
+                               HeightRequest="30"
+                               VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ScrollTap" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 BackgroundColor="LightGray"
+                 Grid.Row="1" />
+        <chattype:ChatInputBarView Grid.Row="2"
+                                   Margin="0,0,10,0"
+                                   x:Name="chatInput" />
+    </Grid>
 </ContentPage>

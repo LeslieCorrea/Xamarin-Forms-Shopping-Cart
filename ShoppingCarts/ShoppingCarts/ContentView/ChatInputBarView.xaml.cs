@@ -1,12 +1,14 @@
 ﻿using ShoppingCarts.ViewModels;
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ShoppingCarts.ContentView
 {
-    public partial class ChatInputBar : Xamarin.Forms.ContentView
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ChatInputBarView : Xamarin.Forms.ContentView
     {
-        public ChatInputBar()
+        public ChatInputBarView()
         {
             InitializeComponent();
 

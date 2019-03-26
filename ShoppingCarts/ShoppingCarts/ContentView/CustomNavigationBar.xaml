@@ -38,7 +38,8 @@
                                    RelativeLayout.XConstraint="{ConstraintExpression
                                    Type=RelativeToParent,
                                    Property=Width,
-                                   Factor=0.85,Constant=0}" />
+                                   Factor=0.85,Constant=0}"
+ />
                     <Image Source="https://www.iconsdb.com/icons/preview/orange/circle-xxl.png" HeightRequest="15" WidthRequest="15" x:Name="redBoxView"
                                    RelativeLayout.YConstraint="{ConstraintExpression
                                    Type=RelativeToView,
@@ -50,7 +51,8 @@
                                    Type=RelativeToView,
                                    Property=X,
                                    ElementName=yellowBoxView,
-                                   Factor=1,Constant=25}" />
+                                   Factor=1,Constant=25}"
+ />
                     <Label HorizontalTextAlignment="Center"  FontSize="9" TextColor="White" HeightRequest="10" WidthRequest="20" x:Name="labelText"
                                    RelativeLayout.YConstraint="{ConstraintExpression
                                    Type=RelativeToView,
@@ -62,7 +64,8 @@
                                    Type=RelativeToView,
                                    Property=X,
                                    ElementName=yellowBoxView,
-                                   Factor=1,Constant=25}" />
+                                   Factor=1,Constant=25}"
+ />
                 </RelativeLayout>
 
                 <ContentView.GestureRecognizers>
