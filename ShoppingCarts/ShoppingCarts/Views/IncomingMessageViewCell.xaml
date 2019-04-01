@@ -2,12 +2,12 @@
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           x:Class="ShoppingCarts.Views.IncomingMessageViewCell">
-    <Frame BackgroundColor="LightBlue"
+    <Frame BackgroundColor="Black"
               Rotation="180"
               FlowDirection="LeftToRight"
               Padding="10"
               HasShadow="false"
               Margin="10,10,80,10">
-        <Label Text="{Binding Text}" />
+        <Label Text="{Binding Text}" TextColor="White" />
     </Frame>
 </ViewCell>
