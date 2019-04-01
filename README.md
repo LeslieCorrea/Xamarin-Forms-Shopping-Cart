@@ -36,6 +36,7 @@ Clone this repository and open [ShoppingCarts.sln](https://github.com/LeslieCorr
   <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/RESTWebService.png" width="150"       height="300" alt="RESTWebService">
   <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/SQLiteDatabase.png" width="150" height="300" alt="SQLiteDatabase">  
   <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ItemGallery.png" width="150" height="300" alt="ItemGallery">  
+  <img src="https://github.com/LeslieCorrea/Xamarin-Forms-Shopping-Cart/blob/master/Screenshots/ChatPage.png" width="150" height="300" alt="ChatPage">  
 </p>
 
 ## Authors
