@@ -4,7 +4,8 @@
              x:Class="ShoppingCarts.Views.ChatPage"
              xmlns:local="clr-namespace:ShoppingCarts.Helpers"
              xmlns:chattype="clr-namespace:ShoppingCarts.ContentView"
-             xmlns:controls="clr-namespace:ShoppingCarts.Controls">
+             xmlns:controls="clr-namespace:ShoppingCarts.Controls"
+             Title="Chat">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:ChatTemplateSelector x:Key="MessageTemplateSelector" />
