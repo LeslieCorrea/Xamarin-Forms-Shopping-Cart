@@ -109,8 +109,6 @@ namespace ShoppingCarts.ViewModels
                              group item by item.NameSort into itemGroup
                              select new Grouping<string, Item>(itemGroup.Key, itemGroup);
 
-                ShoppingItemsGrouped.Clear();
-
                 ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(sorted);
             }
             catch (Exception ex)
