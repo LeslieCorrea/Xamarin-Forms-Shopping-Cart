@@ -6,12 +6,15 @@ using ShoppingCarts.Helpers;
 using ShoppingCarts.Model;
 using ShoppingCarts.Services.ServiceInterface;
 using Xamarin.Forms;
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace ShoppingCarts.ViewModels
 {
     public class CartPageViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Item> ShoppingItems { get; } = new ObservableRangeCollection<Item>();
+        public ObservableRangeCollection<Grouping<string, Item>> ShoppingItemsGrouped { get; set; } = new ObservableRangeCollection<Grouping<string, Item>>();
 
         public string cartCounter;
 
@@ -37,6 +40,7 @@ namespace ShoppingCarts.ViewModels
 
         public CartPageViewModel()
         {
+            ShoppingItems = new ObservableRangeCollection<Item>();
             GetData = new Command(async () => await GetDataCommand());
             _Service = DependencyService.Get<IItemService>();
             OnItemButtonClickedCommand = new Command((e) => ExecuteButtonClick(e));
@@ -99,6 +103,15 @@ namespace ShoppingCarts.ViewModels
                 selectedItem.Status = !selectedItem.Status;
 
                 ShoppingItems.ReplaceRange(ItemsList);
+
+                var sorted = from item in ShoppingItems
+                             orderby item.Name
+                             group item by item.NameSort into itemGroup
+                             select new Grouping<string, Item>(itemGroup.Key, itemGroup);
+
+                ShoppingItemsGrouped.Clear();
+
+                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(sorted);
             }
             catch (Exception ex)
             {
@@ -130,6 +143,15 @@ namespace ShoppingCarts.ViewModels
                 ShoppingItems.Clear();
 
                 ShoppingItems.ReplaceRange(ItemsList);
+
+                var sorted = from item in ShoppingItems
+                             orderby item.Name
+                             group item by item.NameSort into itemGroup
+                             select new Grouping<string, Item>(itemGroup.Key, itemGroup);
+
+                ShoppingItemsGrouped.Clear();
+
+                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(sorted);
 
                 CartCounter = GenericMethods.CartCount().ToString();
             }
