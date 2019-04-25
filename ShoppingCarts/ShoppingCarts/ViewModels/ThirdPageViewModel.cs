@@ -2,6 +2,8 @@
 using MvvmHelpers;
 using ShoppingCarts.Model;
 using Xamarin.Forms;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ShoppingCarts.ViewModels
 {
@@ -12,6 +14,7 @@ namespace ShoppingCarts.ViewModels
         public Command OnItemButtonClickedCommand { get; set; }
 
         public ObservableRangeCollection<Product> Products { get; } = new ObservableRangeCollection<Product>();
+        public ObservableRangeCollection<Grouping<string, Product>> ProductsGrouped { get; set; } = new ObservableRangeCollection<Grouping<string, Product>>();
 
         public ThirdPageViewModel()
         {
@@ -33,6 +36,8 @@ namespace ShoppingCarts.ViewModels
                 var vList = App.DAUtil.GetAllProducts();
                 Products.Clear();
                 Products.ReplaceRange(vList);
+
+                ProductsGrouped = new ObservableRangeCollection<Grouping<string, Product>>(GroupItems(Products));
             }
             catch (Exception ex)
             {
@@ -55,6 +60,8 @@ namespace ShoppingCarts.ViewModels
                 var vList = App.DAUtil.GetAllProducts();
                 Products.Clear();
                 Products.ReplaceRange(vList);
+
+                ProductsGrouped = new ObservableRangeCollection<Grouping<string, Product>>(GroupItems(Products));
             }
             catch (Exception e)
             {
@@ -84,6 +91,16 @@ namespace ShoppingCarts.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private IEnumerable<Grouping<string, Product>> GroupItems(ObservableRangeCollection<Product> Products)
+        {
+            var sorted = from product in Products
+                         orderby product.ProductName
+                         group product by product.ProductName[0].ToString() into productGroup
+                         select new Grouping<string, Product>(productGroup.Key, productGroup);
+
+            return sorted;
         }
     }
 }

@@ -19,7 +19,21 @@
                           ItemSelected="OnItemSelected"
                           BackgroundColor="White"
                           SeparatorVisibility="Default"
-                          ItemsSource="{Binding Products}">
+                          IsGroupingEnabled="True"
+                          GroupDisplayBinding="{Binding Key}"
+                          GroupShortNameBinding="{Binding Key}"
+                          ItemsSource="{Binding ProductsGrouped}">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="35">
+                            <StackLayout VerticalOptions="Start"
+                                  Padding="5"
+                                  BackgroundColor="#808080">
+                                <Label Text="{Binding Key}" FontSize="Medium"  TextColor="White" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
