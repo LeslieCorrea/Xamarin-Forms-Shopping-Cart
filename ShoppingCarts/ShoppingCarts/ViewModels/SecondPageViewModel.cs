@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace ShoppingCarts.ViewModels
 {
@@ -15,6 +16,7 @@ namespace ShoppingCarts.ViewModels
         public readonly IProductDetailService _Service;
         private List<ProductDetail> ItemsList;
         public ObservableRangeCollection<ProductDetail> Products { get; } = new ObservableRangeCollection<ProductDetail>();
+        public ObservableRangeCollection<Grouping<string, ProductDetail>> ProductsGrouped { get; set; } = new ObservableRangeCollection<Grouping<string, ProductDetail>>();
 
         public SecondPageViewModel()
         {
@@ -35,6 +37,13 @@ namespace ShoppingCarts.ViewModels
                     ItemsList = await _Service.GetProducts();
                     Products.Clear();
                     Products.ReplaceRange(ItemsList);
+
+                    var sorted = from product in Products
+                                 orderby product.Name
+                                 group product by product.NameSort into productGroup
+                                 select new Grouping<string, ProductDetail>(productGroup.Key, productGroup);
+
+                    ProductsGrouped = new ObservableRangeCollection<Grouping<string, ProductDetail>>(sorted);
                 }
                 else
                 {
