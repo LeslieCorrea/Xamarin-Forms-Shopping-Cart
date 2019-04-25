@@ -97,7 +97,7 @@ namespace ShoppingCarts.ViewModels
         {
             var sorted = from product in Products
                          orderby product.ProductName
-                         group product by product.ProductName[0].ToString() into productGroup
+                         group product by product.ProductName[0].ToString().ToUpper() into productGroup
                          select new Grouping<string, Product>(productGroup.Key, productGroup);
 
             return sorted;
