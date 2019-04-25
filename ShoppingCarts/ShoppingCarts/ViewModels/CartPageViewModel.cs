@@ -104,12 +104,7 @@ namespace ShoppingCarts.ViewModels
 
                 ShoppingItems.ReplaceRange(ItemsList);
 
-                var sorted = from item in ShoppingItems
-                             orderby item.Name
-                             group item by item.NameSort into itemGroup
-                             select new Grouping<string, Item>(itemGroup.Key, itemGroup);
-
-                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(sorted);
+                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(GroupItems(ShoppingItems));
             }
             catch (Exception ex)
             {
@@ -142,14 +137,7 @@ namespace ShoppingCarts.ViewModels
 
                 ShoppingItems.ReplaceRange(ItemsList);
 
-                var sorted = from item in ShoppingItems
-                             orderby item.Name
-                             group item by item.NameSort into itemGroup
-                             select new Grouping<string, Item>(itemGroup.Key, itemGroup);
-
-                ShoppingItemsGrouped.Clear();
-
-                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(sorted);
+                ShoppingItemsGrouped = new ObservableRangeCollection<Grouping<string, Item>>(GroupItems(ShoppingItems));
 
                 CartCounter = GenericMethods.CartCount().ToString();
             }
@@ -161,6 +149,16 @@ namespace ShoppingCarts.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private IEnumerable<Grouping<string, Item>> GroupItems(ObservableRangeCollection<Item> ShoppingItems)
+        {
+            var sorted = from item in ShoppingItems
+                         orderby item.Name
+                         group item by item.NameSort into itemGroup
+                         select new Grouping<string, Item>(itemGroup.Key, itemGroup);
+
+            return sorted;
         }
     }
 }
