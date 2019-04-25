@@ -153,10 +153,9 @@ namespace ShoppingCarts.ViewModels
 
         private IEnumerable<Grouping<string, Item>> GroupItems(ObservableRangeCollection<Item> ShoppingItems)
         {
-            var sorted = from item in ShoppingItems
-                         orderby item.Name
-                         group item by item.NameSort into itemGroup
-                         select new Grouping<string, Item>(itemGroup.Key, itemGroup);
+            var sorted = ShoppingItems.OrderBy(i => i.Name)
+                .GroupBy(i => i.NameSort)
+                .Select(i => new Grouping<string, Item>(i.Key, i));
 
             return sorted;
         }

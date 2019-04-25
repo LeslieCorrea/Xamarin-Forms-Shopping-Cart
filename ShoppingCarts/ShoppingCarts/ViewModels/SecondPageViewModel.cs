@@ -38,10 +38,9 @@ namespace ShoppingCarts.ViewModels
                     Products.Clear();
                     Products.ReplaceRange(ItemsList);
 
-                    var sorted = from product in Products
-                                 orderby product.Name
-                                 group product by product.NameSort into productGroup
-                                 select new Grouping<string, ProductDetail>(productGroup.Key, productGroup);
+                    var sorted = Products.OrderBy(p => p.Name)
+                   .GroupBy(p => p.NameSort)
+                   .Select(p => new Grouping<string, ProductDetail>(p.Key, p));
 
                     ProductsGrouped = new ObservableRangeCollection<Grouping<string, ProductDetail>>(sorted);
                 }
